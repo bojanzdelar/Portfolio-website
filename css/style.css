@@ -5,3 +5,9 @@ header {
     background-size: cover;
     height: 100vh;
 }
+
+.navbar-social {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
