@@ -114,7 +114,7 @@ const displayAchievements = achievements => {
 		}
 		achievement = achievements[i];
 		achievements_content.innerHTML += `
-			<div class="card col-lg-6 col-xl-4 mb-2">
+			<div class="card col-md-6 col-xl-4 mb-2">
 				<img src="${achievement.image}" class="card-img-top" alt="${achievement.title}">
 				<div class="card-body">
 				<h5 class="card-title">${achievement.title}</h5>
