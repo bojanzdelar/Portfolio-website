@@ -25,19 +25,9 @@ const achievements = [
         "text" : "Bronze medal in K1 500m"
     },
     {
-        "image" : "/assets/achievements/2018-wch-jun-k1-500.png",
-        "title" : "World Junior Championships 2018",
-        "text" : "Sixth place in K1 200m"
-    },
-    {
         "image" : "/assets/achievements/2018-ech-jun-k1-500.jpeg",
         "title" : "European Junior Championships 2018",
         "text" : "Silver medal in K1 500m"
-    },
-    {
-        "image" : "/assets/achievements/2018-ech-jun-k1-500.jpeg",
-        "title" : "European Junior Championships 2018",
-        "text" : "Fourth place in K1 500m"
     },
     {
         "image" : "/assets/achievements/2018-ech-jun-k1-500.jpeg",
@@ -58,11 +48,6 @@ const achievements = [
         "image" : "/assets/achievements/2018-ech-jun-k1-500.jpeg",
         "title" : "World Junior Championships 2017",
         "text" : "Silver medal in K1 500m"
-    },
-    {
-        "image" : "/assets/achievements/2018-ech-jun-k1-500.jpeg",
-        "title" : "World Junior Championships 2017",
-        "text" : "Fourth place in K1 1000m"
     },
     {
         "image" : "/assets/achievements/2018-ech-jun-k1-500.jpeg",
@@ -93,16 +78,22 @@ const achievements = [
         "image" : "/assets/achievements/2018-ech-jun-k1-500.jpeg",
         "title" : "European Junior Championships 2016",
         "text" : "Bronze medal in K1 500m"
-    },
-    {
-        "image" : "/assets/achievements/2018-ech-jun-k1-500.jpeg",
-        "title" : "European Junior Championships 2015",
-        "text" : "Ninth place in K4 1000m"
     }
 ]
 
+/* Achievements display */
+
 const pageSize = 6;
 const achievements_content = document.querySelector("#achievements-content");
+
+const generateAchievement = achievement => {
+    return `<div class="card col-md-6 col-xl-4 mb-2">
+				<img src="${achievement.image}" class="card-img-top" alt="${achievement.title}">
+				<div class="card-body">
+				<h4 class="card-title">${achievement.title}</h5>
+				<p class="card-text">${achievement.text}</p>
+			</div>`;
+}
 
 const displayAchievements = achievements => {
 	achievements_content.innerHTML = "";
@@ -112,15 +103,7 @@ const displayAchievements = achievements => {
 		if (i == achievements.length) {
 			break;
 		}
-		achievement = achievements[i];
-		achievements_content.innerHTML += `
-			<div class="card col-md-6 col-xl-4 mb-2">
-				<img src="${achievement.image}" class="card-img-top" alt="${achievement.title}">
-				<div class="card-body">
-				<h4 class="card-title">${achievement.title}</h5>
-				<p class="card-text">${achievement.text}</p>
-			</div>
-		`;
+		achievements_content.innerHTML += generateAchievement(achievements[i])
 	}
 };
 displayAchievements(achievements);
@@ -139,3 +122,11 @@ const setPage = pageNumber => {
 
 document.querySelector("#page-prev").addEventListener("click", () => setPage(currentPage() - 1));
 document.querySelector("#page-next").addEventListener("click", () => setPage(currentPage() + 1));
+
+/* Form handling */
+
+let form = document.querySelector("form");
+
+const sendMessage = event => event.preventDefault();
+
+form.addEventListener("submit", sendMessage)
