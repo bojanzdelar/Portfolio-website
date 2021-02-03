@@ -123,29 +123,45 @@
 				<h2 class="text-center text-uppercase">Contact</h2>
 				<hr class="my-4">
 				<div class="row">
-					<div class="col-lg-8 mx-auto">
-						<form>
-							<div class="py-2">
-								<label for="name" class="col-form-label-lg">Name</label>
-								<br>
-								<input class="form-control form-control-lg" type="text" id="name" placeholder="Enter your name">
+					<form class="col-lg-8 mx-auto needs-validation" novalidate>
+						<div class="py-2">
+							<label for="name" class="col-form-label-lg">Name</label>
+							<br>
+							<input class="form-control form-control-lg" type="text" id="name" placeholder="Enter your name" required>
+							<div class="valid-feedback">
+								Looks good!
 							</div>
-							<div class="py-2">
-								<label for="email" class="col-form-label-lg">Email Adress</label>
-								<br>
-								<input class="form-control form-control-lg" type="text" id="email" placeholder="Enter your email">
+							<div class="invalid-feedback">
+								Please enter your name.
 							</div>
-							<div class="py-2">
-								<label for="message" class="col-form-label-lg">Message</label>
-								<br>
-								<textarea class="form-control form-control-lg" id="message" placeholder="Your message here..." rows="4"></textarea>
+						</div>
+						<div class="py-2">
+							<label for="email" class="col-form-label-lg">Email Adress</label>
+							<br>
+							<input class="form-control form-control-lg" type="text" id="email" placeholder="Enter your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+							<div class="valid-feedback">
+								Looks good!
 							</div>
+							<div class="invalid-feedback">
+								Please enter your email adress in valid format.
+							</div>
+						</div>
+						<div class="py-2">
+							<label for="message" class="col-form-label-lg">Message</label>
+							<br>
+							<textarea class="form-control form-control-lg" id="message" placeholder="Your message here..." rows="4" required></textarea>
+							<div class="valid-feedback">
+								Looks good!
+							</div>
+							<div class="invalid-feedback">
+								Please enter your message.
+							</div>
+						</div>
 
-							<div class="pt-4 text-end">
-								<button type="submit" class="btn btn-outline-dark btn-lg" id="sendMessage">Send the message</button>
-							</div>
-						</form>
-					</div>
+						<div class="pt-4 text-end">
+							<button type="submit" class="btn btn-outline-dark btn-lg" id="sendMessage">Send the message</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</section>

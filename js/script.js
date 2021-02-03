@@ -125,8 +125,29 @@ document.querySelector("#page-next").addEventListener("click", () => setPage(cur
 
 /* Form handling */
 
-let form = document.querySelector("form");
+/* At the moment works as if there is only one form,
+if you add more forms this function needs to be adapted */
+(() => {
+    let form = document.querySelector('.needs-validation');
 
-const sendMessage = event => event.preventDefault();
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+        event.stopPropagation();
 
-form.addEventListener("submit", sendMessage)
+        if (!form.checkValidity()) {
+            form.classList.add('was-validated')   
+            return;
+        }
+
+        inputs = document.querySelectorAll("input, textarea");
+        Array.prototype.slice.call(inputs).forEach(input => {
+            input.value = "";
+        });
+
+        // Send mail
+        // Notify user it was successful
+
+        form.classList.remove('was-validated');
+
+    }, false);
+})();
