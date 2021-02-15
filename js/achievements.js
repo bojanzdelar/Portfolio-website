@@ -81,18 +81,16 @@ const achievements = [
     }
 ]
 
-/* Achievements display */
-
 const pageSize = 6;
 const achievements_content = document.querySelector("#achievements-content");
 
 const generateAchievement = achievement => {
-    return `<div class="card col-md-6 col-xl-4 mb-2">
+    return `<article class="card col-md-6 col-xl-4 mb-2">
 				<img src="${achievement.image}" class="card-img-top" alt="${achievement.title}">
 				<div class="card-body">
 				<h4 class="card-title">${achievement.title}</h5>
 				<p class="card-text">${achievement.text}</p>
-			</div>`;
+			</article>`;
 }
 
 const displayAchievements = achievements => {
@@ -122,40 +120,3 @@ const setPage = pageNumber => {
 
 document.querySelector("#page-prev").addEventListener("click", () => setPage(currentPage() - 1));
 document.querySelector("#page-next").addEventListener("click", () => setPage(currentPage() + 1));
-
-/* Contact Form handling */
-
-const form = document.querySelector('form');
-
-const validateForm = event => {
-    if (!form.checkValidity()) {
-        form.classList.add('was-validated');
-        event.preventDefault();
-        event.stopPropagation();
-        return;
-    }
-
-    sendMail(form);
-
-    inputs = document.querySelectorAll("input, textarea");
-    Array.prototype.slice.call(inputs).forEach(input => {
-        input.value = "";
-    });
-
-    form.classList.remove('was-validated');
-};
-
-const sendMail = form => {
-    const data = {
-        Name: form.querySelector("#name").value,
-        Email: form.querySelector("#email").value,
-        Message: form.querySelector("#message").value
-    }
-
-    const request = new XMLHttpRequest();
-    request.open("POST", "https://formsubmit.co/ajax/bojan@zdelar.com", true);
-    request.setRequestHeader("Content-Type", "application/json");
-    request.send(JSON.stringify(data));
-};
-
-form.addEventListener('submit', validateForm, false);
