@@ -128,11 +128,10 @@ document.querySelector("#page-next").addEventListener("click", () => setPage(cur
 const form = document.querySelector('form');
 
 const validateForm = event => {
-    event.preventDefault();
-    event.stopPropagation();
-
     if (!form.checkValidity()) {
-        form.classList.add('was-validated')   
+        form.classList.add('was-validated');
+        event.preventDefault();
+        event.stopPropagation();
         return;
     }
 
@@ -144,25 +143,19 @@ const validateForm = event => {
     });
 
     form.classList.remove('was-validated');
-}
+};
 
 const sendMail = form => {
-    const obj = new XMLHttpRequest();
-    obj.onreadystatechange = () => {
-        if(obj.readyState == 4){
-            if(obj.status == 200){
-                const res = JSON.parse(obj.responseText);
-                alert(res.message);
-            }
-            else{
-                alert("XMLHttp status " + obj.status + ": " + obj.statusText);
-            }
-        }
-    };
-    obj.open("post", form.action, true);
-    obj.setRequestHeader("Content-Type", "application/json"); // NOTICE: "application/json"
-    obj.send(JSON.stringify({ name: form.name.value, email: form.email.value, message: form.message.value }));
-    return false;
+    const data = {
+        Name: form.querySelector("#name").value,
+        Email: form.querySelector("#email").value,
+        Message: form.querySelector("#message").value
+    }
+
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://formsubmit.co/ajax/bojan@zdelar.com", true);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.send(JSON.stringify(data));
 };
 
 form.addEventListener('submit', validateForm, false);
