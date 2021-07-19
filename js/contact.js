@@ -1,35 +1,41 @@
-const form = document.querySelector('form');
+const form = document.querySelector("form");
 
-const validateForm = event => {
-    event.preventDefault();
-    event.stopPropagation();
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  event.stopPropagation();
 
-    if (!form.checkValidity()) {
-        form.classList.add('was-validated');
-        return;
-    }
+  if (!form.checkValidity()) {
+    form.classList.add("was-validated");
+    return;
+  }
 
-    sendMail(form);
+  form.classList.remove("was-validated");
 
-    inputs = document.querySelectorAll("input, textarea");
-    Array.prototype.slice.call(inputs).forEach(input => {
-        input.value = "";
-    });
+  sendMail();
+  resetForm();
+});
 
-    form.classList.remove('was-validated');
+const resetForm = () => {
+  document.querySelectorAll("input, textarea").forEach((input) => {
+    input.value = "";
+  });
 };
 
-const sendMail = form => {
-    const data = {
+const sendMail = async () => {
+  try {
+    await fetch("https://formsubmit.co/ajax/bojan@zdelar.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         Name: form.querySelector("#name").value,
         Email: form.querySelector("#email").value,
-        Message: form.querySelector("#message").value
-    }
-
-    const request = new XMLHttpRequest();
-    request.open("POST", "https://formsubmit.co/ajax/bojan@zdelar.com", true);
-    request.setRequestHeader("Content-Type", "application/json");
-    request.send(JSON.stringify(data));
+        Message: form.querySelector("#message").value,
+      }),
+    });
+    window.alert("Message sent!");
+  } catch {
+    window.alert("Something went wrong. Please try again later!");
+  }
 };
-
-form.addEventListener('submit', validateForm, false);
