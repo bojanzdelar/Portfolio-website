@@ -15,12 +15,6 @@ form.addEventListener("submit", (event) => {
   resetForm();
 });
 
-const resetForm = () => {
-  document.querySelectorAll("input, textarea").forEach((input) => {
-    input.value = "";
-  });
-};
-
 const sendMail = async () => {
   try {
     await fetch("https://formsubmit.co/ajax/bojan@zdelar.com", {
@@ -38,4 +32,10 @@ const sendMail = async () => {
   } catch {
     window.alert("Something went wrong. Please try again later!");
   }
+};
+
+const resetForm = () => {
+  document.querySelectorAll("input, textarea").forEach((input) => {
+    input.value = "";
+  });
 };

@@ -12,7 +12,7 @@ const generateAchievement = (achievement) => {
       <img src="${achievement.image}" class="card-img-top" alt="${achievement.title}">
       <div class="card-body">
       <h4 class="card-title">${achievement.title}</h5>
-      <p class="card-text">${achievement.text}</p>
+      <p class="fs-5 card-text">${achievement.text}</p>
 	  </article>
   `;
 };
