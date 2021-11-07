@@ -1,5 +1,5 @@
+let achievements;
 const achievementsContent = document.querySelector("#achievements-content");
-const pageSize = 6;
 
 const getAchievements = async () => {
   const response = await fetch("/assets/achievements.json");
@@ -17,8 +17,7 @@ const generateAchievement = (achievement) => {
   `;
 };
 
-const displayAchievements = async () => {
-  const achievements = await getAchievements();
+const displayAchievements = () => {
   achievementsContent.innerHTML = "";
 
   const currentPage = achievementsContent.getAttribute("actpage");
@@ -29,24 +28,8 @@ const displayAchievements = async () => {
     achievementsContent.innerHTML += generateAchievement(achievements[i]);
   }
 };
-displayAchievements();
 
-const totalPages = (achievements) => Math.ceil(achievements.length / pageSize);
-
-const currentPage = () =>
-  parseInt(achievementsContent.getAttribute("actpage"), 10);
-
-const setPage = (pageNumber) => {
-  if (pageNumber < 1 || pageNumber > totalPages(achievements)) {
-    return;
-  }
-  achievementsContent.setAttribute("actpage", pageNumber);
+getAchievements().then(data => {
+  achievements = data;
   displayAchievements(achievements);
-};
-
-document
-  .querySelector("#page-prev")
-  .addEventListener("click", () => setPage(currentPage() - 1));
-document
-  .querySelector("#page-next")
-  .addEventListener("click", () => setPage(currentPage() + 1));
+});
