@@ -6,6 +6,7 @@
     <meta name="keywords" content="Bojan Zdelar" />
     <meta name="author" content="Bojan Zdelar" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
     <link rel="shortcut icon" href="/assets/logo.png" />
 
     <!-- Bootstrap 5 -->
@@ -25,6 +26,7 @@
     <script src="js/achievements.js" defer></script>
     <script src="js/pagination.js" defer></script>
     <script src="js/contact.js" defer></script>
+    <script src="js/copyright.js" defer></script>
 
     <title>Bojan Zdelar</title>
   </head>
@@ -251,7 +253,20 @@
         <h3 class="text-center text-uppercase">Supporters</h3>
         <hr class="my-4" />
         <div class="row justify-content-center">
-          <div class="col-6 col-md-4 col-xl-3">
+          <div
+            class="col-6 col-md-4 col-xl-3 d-flex align-items-center mb-3 mb-md-0"
+          >
+            <a href="https://www.nelo.eu" target="blank">
+              <img
+                class="img-fluid mx-auto d-block"
+                src="assets/supporters/invenda.png"
+                alt="Invenda Group"
+              />
+            </a>
+          </div>
+          <div
+            class="col-6 col-md-4 col-xl-3 d-flex align-items-center mb-3 mb-md-0"
+          >
             <a href="https://www.nelo.eu" target="blank">
               <img
                 class="img-fluid mx-auto d-block"
@@ -260,7 +275,7 @@
               />
             </a>
           </div>
-          <div class="col-6 col-md-4 col-xl-3">
+          <div class="col-6 col-md-4 col-xl-3 d-flex align-items-center">
             <a href="https://paddles.braca-sport.com" target="blank">
               <img
                 class="img-fluid mx-auto d-block"
@@ -276,7 +291,7 @@
     <!-- Copyright section -->
     <section class="py-4 text-center text-dark bg-light">
       <div class="container">
-        <p>Copyright © Bojan Zdelar 2021</p>
+        <p>Copyright © Bojan Zdelar <span id="year"></span></p>
       </div>
     </section>
   </body>
