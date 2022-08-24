@@ -1,5 +1,25 @@
 [
   {
+    "image": "/assets/achievements/2022-ech-k1-1000.jpg",
+    "title": "European Championships 2022",
+    "text": "Sixth place in K1 1000m"
+  },
+  {
+    "image": "/assets/achievements/2022-ech-k1-500.jpg",
+    "title": "European Championships 2022",
+    "text": "Fourth place in K1 500m"
+  },
+  {
+    "image": "/assets/achievements/2022-ech-u23-k1-500.jpg",
+    "title": "European U23 Championships 2022",
+    "text": "Fifth place in K1 500m"
+  },
+  {
+    "image": "/assets/achievements/2022-ech-u23-k1-1000.jpg",
+    "title": "European U23 Championships 2022",
+    "text": "Seventh place in K1 1000m"
+  },
+  {
     "image": "/assets/achievements/2022-wc-k1-1000.jpg",
     "title": "World Cup 2022",
     "text": "Ninth place in K1 1000m"
