@@ -1,23 +1,13 @@
 [
   {
-    "image": "/assets/achievements/2023-ech-u23-k1-500.jpg",
-    "title": "European U23 Championships 2023",
-    "text": "Eight place in K1 500m"
+    "image": "/assets/achievements/2025-ech-k1-1000.jpg",
+    "title": "European Championships 2025",
+    "text": "Tenth place in K1 1000m"
   },
   {
-    "image": "/assets/achievements/2023-wch-u23-k1-1000.jpg",
-    "title": "World U23 Championships 2023",
-    "text": "Ninth place in K1 1000m"
-  },
-  {
-    "image": "/assets/achievements/2023-wc-k2-500.jpg",
-    "title": "World Cup 2023",
-    "text": "Fourteenth place in K2 500m"
-  },
-  {
-    "image": "/assets/achievements/2023-eg-k2-500-mix.jpg",
-    "title": "European Games 2023",
-    "text": "Fourteenth place in K2 500m mix"
+    "image": "/assets/achievements/2024-eoq-k1-1000.jpg",
+    "title": "European Olympic Qualifier 2024",
+    "text": "Third place in K1 1000m"
   },
   {
     "image": "/assets/achievements/2022-wch-u23-k1-500.jpg",
@@ -38,16 +28,6 @@
     "image": "/assets/achievements/2022-ech-k1-500.jpg",
     "title": "European Championships 2022",
     "text": "Fourth place in K1 500m"
-  },
-  {
-    "image": "/assets/achievements/2022-ech-u23-k1-500.jpg",
-    "title": "European U23 Championships 2022",
-    "text": "Fifth place in K1 500m"
-  },
-  {
-    "image": "/assets/achievements/2022-ech-u23-k1-1000.jpg",
-    "title": "European U23 Championships 2022",
-    "text": "Seventh place in K1 1000m"
   },
   {
     "image": "/assets/achievements/2022-wc-k1-1000.jpg",
@@ -81,7 +61,7 @@
   },
   {
     "image": "/assets/achievements/2021-og-k1-1000.jpeg",
-    "title": "Olympic Games 2020",
+    "title": "Olympic Games - Tokyo 2020",
     "text": "Sixteenth place in K1 1000m"
   },
   {
