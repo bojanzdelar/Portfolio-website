@@ -546,22 +546,25 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font: 800 11px/1.5 var(--font-body);
   letter-spacing: .16em;
 }
-.champion-card h3 {
+.champion-card .olympian-eyebrow {
+  margin-bottom: 1px;
+  font-size: clamp(15px, 1.45vw, 18px);
+  line-height: 1.25;
+  letter-spacing: .12em;
+  font-weight: 800;
+}
+.champion-card .champion-title {
   margin: 0;
   max-width: 100%;
-  font: 800 clamp(38px, 4.5vw, 58px)/.92 var(--font-display);
-  letter-spacing: -.075em;
+  font: 800 clamp(32px, 3.5vw, 46px)/.98 var(--font-display);
+  letter-spacing: -.055em;
   position: relative;
   z-index: 1;
+  overflow-wrap: normal;
 }
-.champion-card h3 span { display: block; color: var(--white); }
-.champion-card p {
-  margin: 0;
-  max-width: 250px;
-  font-size: 14px;
-  line-height: 1.65;
-  position: relative;
-  z-index: 1;
+.champion-card .champion-title span {
+  display: block;
+  color: var(--white);
 }
 .champion-mark {
   position: absolute;
@@ -661,8 +664,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .record-stat strong { margin: 0; grid-column: 2; grid-row: 1 / span 2; font-size: 37px; }
   .record-stat p { margin: 0; grid-column: 1; font-size: 13px; }
   .record-feature-grid { grid-template-columns: 1fr; gap: 12px; }
-  .champion-card { min-height: 230px; padding: 25px; gap: 15px; }
-  .champion-card h3 { font-size: clamp(42px, 12vw, 57px); }
+  .champion-card { min-height: 230px; padding: 25px; gap: 13px; }
+  .champion-card .champion-title { font-size: clamp(31px, 8.4vw, 42px); }
+  .champion-card .olympian-eyebrow { font-size: 15px; }
   .personal-best-header { padding: 20px 20px 16px; }
   .personal-best-row { padding: 19px 20px; }
   .personal-best-row strong { font-size: clamp(34px, 10vw, 43px); }
