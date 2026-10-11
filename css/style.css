@@ -701,3 +701,43 @@ button, a { -webkit-tap-highlight-color: transparent; }
   line-height: 1.45;
   text-transform: uppercase;
 }
+
+
+/* Return to the previous hero crop before the latest zoom-out adjustment. */
+.hero-image { transform: scale(1.02) translateX(2%); }
+@media (max-width: 900px) {
+  .hero-image { transform: scale(1.02) translateX(2%); }
+}
+@media (max-width: 650px) {
+  .hero-image { transform: scale(1.0) translateX(0); }
+}
+
+/* Simpler personal wordmark: name first, one restrained red dot, no monogram or subtitle. */
+.wordmark-simple { gap: 0; }
+.wordmark-simple .wordmark-name {
+  display: block;
+  color: var(--white);
+  font: 800 15px/1.1 var(--font-display);
+  letter-spacing: .055em;
+  white-space: nowrap;
+}
+.wordmark-simple .wordmark-accent {
+  display: inline;
+  color: var(--accent);
+  font: inherit;
+  letter-spacing: inherit;
+}
+.footer-wordmark .wordmark-name { font-size: 13px; }
+
+/* Increase prominence of the championship level above the U23 Champion title. */
+.champion-card .feature-eyebrow {
+  font-size: clamp(15px, 1.45vw, 18px);
+  line-height: 1.35;
+  letter-spacing: .105em;
+  font-weight: 800;
+}
+@media (max-width: 650px) {
+  .wordmark-simple .wordmark-name { font-size: 13px; }
+  .footer-wordmark .wordmark-name { font-size: 12px; }
+  .champion-card .feature-eyebrow { font-size: 15px; }
+}
