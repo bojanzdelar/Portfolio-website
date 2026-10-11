@@ -33,7 +33,8 @@ const generateAchievement = (achievement) => {
 
   const image = document.createElement("img");
   image.className = "achievement-image";
-  image.src = new URL(achievement.image.replace(/^\\/+/, ""), document.baseURI).href;
+  const imagePath = String(achievement.image || "").split("/").filter(Boolean).join("/");
+  image.src = new URL(imagePath, document.baseURI).href;
   image.alt = achievement.title || "Competition photograph";
   image.loading = "lazy";
   image.decoding = "async";
@@ -88,7 +89,8 @@ nextButton.addEventListener("click", () => {
 
 getAchievements()
   .then((data) => {
-    achievements = Array.isArray(data) ? data : [];
+    if (!Array.isArray(data) || data.length === 0) throw new Error("Achievement archive is empty or invalid.");
+    achievements = data;
     displayAchievements();
   })
   .catch((error) => {
