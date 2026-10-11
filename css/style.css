@@ -1050,3 +1050,40 @@ button, a { -webkit-tap-highlight-color: transparent; }
     height: 30px;
   }
 }
+
+/* Improve small-text legibility without changing the overall layout. */
+.eyebrow,
+.section-kicker { font-size: 12px; }
+.section-kicker { letter-spacing: .08em; }
+.hero-copy { font-size: 17px; line-height: 1.75; }
+.intro-copy p { font-size: 16px; line-height: 1.82; }
+.intro-copy .lead { font-size: 23px; line-height: 1.5; }
+.section-description,
+.contact-intro > p { font-size: 15px; line-height: 1.8; }
+.underlined-link,
+.text-link,
+.button { font-size: 13px; }
+.achievement-toolbar { font-size: 11px; letter-spacing: .1em; }
+.achievement-tag { font-size: 11px; }
+.achievement-info p { font-size: 14px; line-height: 1.65; }
+.page-control,
+.page-indicator { font-size: 13px; }
+.record-stat-label { font-size: 12px; }
+.record-stat p { font-size: 15px; }
+.best-distance { font-size: 12px; }
+.feature-eyebrow { font-size: 12px; }
+.contact-intro > p { max-width: 370px; }
+.social-links a { font-size: 13px; }
+.field label,
+.form-note { font-size: 12px; }
+
+@media (max-width: 650px) {
+  .eyebrow,
+  .section-kicker { font-size: 11px; }
+  .hero-copy { font-size: 15px; }
+  .intro-copy p { font-size: 14px; }
+  .intro-copy .lead { font-size: 20px; }
+  .section-description,
+  .contact-intro > p { font-size: 14px; }
+}
+
