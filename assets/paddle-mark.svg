@@ -1,6 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" role="img" aria-labelledby="title">
-  <title id="title">Bojan Zdelar kayak sprint mark</title>
-  <path d="M7.5 47.5C14.2 45 23.4 52.1 28 59.2 23.1 65.4 14.2 65 9.5 59.2 7.3 56.4 6.6 51.4 7.5 47.5Z" fill="#E63946"/>
-  <path d="M52 15.8C56.9 9.6 65.8 10 70.5 15.8 72.7 18.6 73.4 23.6 72.5 27.5 65.8 30 56.6 22.9 52 15.8Z" fill="#E63946"/>
-  <path d="M17 63 63 17" stroke="#F3F4F1" stroke-width="4.5" stroke-linecap="round"/>
+  <title id="title">Bojan Zdelar kayak sprint logo</title>
+  <path d="M5.5 10.1C7.3 5.6 13.9 3.7 18.1 7.5L26 15.3 19.5 22.2 9.2 16.9C5.9 15.2 4.3 12.9 5.5 10.1Z" fill="#E63946"/>
+  <path d="M54 46.5 61.7 52.1 69.8 57.6C74.1 60.6 75.8 65.7 72.9 68.5 70.4 71 65.7 69.8 62.8 66.6L53.8 56.2 49.8 52.6Z" fill="#E63946"/>
+  <path d="M13.1 14.2 64.8 59.2" stroke="#F3F4F1" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M8 59.3Q27.7 55.5 43.7 58.2L72.7 57.1 66.8 63.1Q37.9 67.1 13.3 63.1Z" fill="#F3F4F1"/>
+  <path d="M19 61.1Q42.5 63.3 64.1 60.5" stroke="#E63946" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M35.4 35.8 31.1 30.6 26.8 27.5M43.8 35.5 50.6 40.2 55.5 44.1" stroke="#F3F4F1" stroke-width="4.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M37.7 33.4Q33.5 36.4 34.2 42.3L35.1 49.1Q39.1 52.1 44.7 49.5L49 41.3Q50.1 36.6 45.1 33.5Z" fill="#F3F4F1"/>
+  <circle cx="41.8" cy="27.4" r="5.3" fill="#F3F4F1"/>
+  <path d="M24.8 26.1 57.2 44.8" stroke="#F3F4F1" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M6 70.1Q14.7 67.9 23.2 69.8M14.9 74.2Q22.2 72.4 29 73.5" stroke="#E63946" stroke-width="2.5" stroke-linecap="round"/>
 </svg>
