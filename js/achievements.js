@@ -24,7 +24,7 @@ const getEventType = (achievement) => {
   return "International racing";
 };
 
-const generateAchievement = (achievement, index) => {
+const generateAchievement = (achievement) => {
   const article = document.createElement("article");
   article.className = "achievement-card";
 
@@ -38,11 +38,7 @@ const generateAchievement = (achievement, index) => {
   image.loading = "lazy";
   image.decoding = "async";
 
-  const number = document.createElement("span");
-  number.className = "achievement-number";
-  number.textContent = String(index + 1).padStart(2, "0");
-
-  imageWrap.append(image, number);
+  imageWrap.append(image);
 
   const info = document.createElement("div");
   info.className = "achievement-info";
@@ -65,15 +61,15 @@ const generateAchievement = (achievement, index) => {
 const displayAchievements = () => {
   achievementsContent.replaceChildren();
   const start = (currentPage - 1) * pageSize;
-  achievements.slice(start, start + pageSize).forEach((achievement, offset) => {
-    achievementsContent.append(generateAchievement(achievement, start + offset));
+  achievements.slice(start, start + pageSize).forEach((achievement) => {
+    achievementsContent.append(generateAchievement(achievement));
   });
 
   const totalPages = Math.max(1, Math.ceil(achievements.length / pageSize));
   previousButton.disabled = currentPage === 1;
   nextButton.disabled = currentPage === totalPages;
-  pageIndicator.innerHTML = `${String(currentPage).padStart(2, "0")} <i>/</i> ${String(totalPages).padStart(2, "0")}`;
-  resultsCount.textContent = `${String(start + 1).padStart(2, "0")}–${String(Math.min(start + pageSize, achievements.length)).padStart(2, "0")} / ${String(achievements.length).padStart(2, "0")} RESULTS`;
+  pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
+  resultsCount.textContent = `Showing ${start + 1}–${Math.min(start + pageSize, achievements.length)} of ${achievements.length} results`;
 };
 
 previousButton.addEventListener("click", () => {
