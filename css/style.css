@@ -296,3 +296,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 650px) {
   .hero-image { object-position: 60% center; }
 }
+
+/* Keep the athlete clear of the headline: bias the action photo to the right. */
+.hero-image {
+  object-position: center 38%;
+  transform: scale(1.12) translateX(4%);
+}
+@media (max-width: 900px) {
+  .hero-image {
+    object-position: 46% center;
+    transform: scale(1.12) translateX(3%);
+  }
+}
+@media (max-width: 650px) {
+  .hero-image {
+    object-position: 44% center;
+    transform: scale(1.04) translateX(0);
+  }
+}
