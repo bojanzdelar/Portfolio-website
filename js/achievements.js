@@ -8,7 +8,7 @@ const pageSize = 6;
 let currentPage = 1;
 
 const getAchievements = async () => {
-  const response = await fetch("/assets/achievements.json");
+  const response = await fetch(new URL("assets/achievements.json", document.baseURI));
   if (!response.ok) throw new Error("Could not load achievements.");
   return response.json();
 };
@@ -33,7 +33,7 @@ const generateAchievement = (achievement, index) => {
 
   const image = document.createElement("img");
   image.className = "achievement-image";
-  image.src = achievement.image;
+  image.src = new URL(achievement.image.replace(/^\\/+/, ""), document.baseURI).href;
   image.alt = achievement.title || "Competition photograph";
   image.loading = "lazy";
   image.decoding = "async";
