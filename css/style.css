@@ -5,7 +5,7 @@
   --muted: #89919b;
   --line: rgba(255,255,255,.14);
   --line-dark: rgba(11,16,24,.16);
-  --accent: #c4f13c;
+  --accent: #e63946;
   --blue: #5ea7ff;
   --white: #f7f8f6;
   --font-display: "Manrope", sans-serif;
@@ -46,12 +46,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .button { min-height: 49px; display: inline-flex; align-items: center; justify-content: center; gap: 25px; border: 0; padding: 0 19px; font-size: 12px; font-weight: 700; cursor: pointer; transition: transform .2s, background .2s, color .2s; }
 .button:hover { transform: translateY(-2px); }
 .button-primary { background: var(--accent); color: var(--ink); }
-.button-primary:hover { background: #d4ff53; }
+.button-primary:hover { background: #ff525d; }
 .button-primary span { font-size: 17px; }
 .text-link { color: white; font-size: 12px; font-weight: 700; }
 .text-link span { color: var(--accent); padding-left: 10px; font-size: 17px; }
 .hero-bottomline { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid var(--line); margin-top: 83px; padding-top: 19px; color: #b8c0ca; font: 700 9px var(--font-body); letter-spacing: .15em; }
-.status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(196,241,60,.12); vertical-align: 1px; }
+.status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(230,57,70,.16); vertical-align: 1px; }
 .hero-index { color: #9aa2ad; }
 .hero-index b { color: var(--white); font-weight: 700; }
 .hero-side-label { position: absolute; right: 25px; top: 50%; writing-mode: vertical-rl; transform: translateY(-50%); font-size: 9px; letter-spacing: .23em; color: rgba(255,255,255,.54); }
@@ -84,7 +84,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .results-count { color: #75808d; }
 .achievement-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 27px 20px; }
 .achievement-card { min-width: 0; background: var(--ink-soft); border: 1px solid rgba(255,255,255,.09); transition: border-color .25s, transform .25s; }
-.achievement-card:hover { transform: translateY(-4px); border-color: rgba(196,241,60,.55); }
+.achievement-card:hover { transform: translateY(-4px); border-color: rgba(230,57,70,.65); }
 .achievement-image-wrap { position: relative; height: 230px; overflow: hidden; background: #1c2733; }
 .achievement-image-wrap::after { position: absolute; content: ""; inset: 45% 0 0; background: linear-gradient(0deg, rgba(11,16,24,.55), transparent); pointer-events: none; }
 .achievement-image { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .45s ease; filter: saturate(.88); }
@@ -219,4 +219,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+/* Red is the signature accent throughout the athlete identity. */
+:root { --accent: #e63946; }
+.statement { background: #e63946; }
+.statement .eyebrow-line { background: var(--ink); }
+@media (min-width: 901px) {
+  .hero-background { background-position: center 42%; }
 }
