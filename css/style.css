@@ -984,3 +984,52 @@ button, a { -webkit-tap-highlight-color: transparent; }
     max-height: 48px;
   }
 }
+
+
+/* Return the partner section to two balanced equipment partners. */
+.partner-logos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 880px;
+  margin: 0;
+}
+.partner-logos a {
+  min-height: 132px;
+  padding: 22px 24px 22px 0;
+  justify-content: flex-start;
+}
+.partner-logos a + a {
+  padding-left: 28px;
+  border-left: 1px solid rgba(11,16,24,.2);
+}
+.partner-logos img {
+  width: 82%;
+  max-width: 220px;
+  max-height: 68px;
+  filter: grayscale(1) brightness(.76) contrast(1.1);
+}
+.partner-logos a:hover img {
+  filter: grayscale(0) brightness(1) contrast(1);
+}
+@media (max-width: 900px) {
+  .partner-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 800px;
+  }
+  .partner-logos a { min-height: 118px; }
+  .partner-logos a + a {
+    padding-left: 22px;
+    border-left: 1px solid rgba(11,16,24,.2);
+  }
+  .partner-logos img { max-height: 60px; }
+}
+@media (max-width: 650px) {
+  .partner-logos a {
+    min-height: 98px;
+    padding: 15px 10px 15px 0;
+  }
+  .partner-logos a + a { padding-left: 14px; }
+  .partner-logos img {
+    width: 100%;
+    max-height: 48px;
+  }
+}
