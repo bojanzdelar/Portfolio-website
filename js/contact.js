@@ -1,6 +1,6 @@
-const form = document.querySelector("form");
+const form = document.querySelector(".contact-form");
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   event.stopPropagation();
 
@@ -9,33 +9,33 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  form.classList.remove("was-validated");
+  const submitButton = form.querySelector("#sendMessage");
+  submitButton.disabled = true;
+  submitButton.innerHTML = 'Sending… <span aria-hidden="true">↗</span>';
 
-  sendMail();
-  resetForm();
-});
-
-const sendMail = async () => {
   try {
-    await fetch("https://formsubmit.co/ajax/bojan@zdelar.com", {
+    const response = await fetch("https://formsubmit.co/ajax/bojan@zdelar.com", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
-        Name: form.querySelector("#name").value,
-        Email: form.querySelector("#email").value,
-        Message: form.querySelector("#message").value,
+        Name: form.querySelector("#name").value.trim(),
+        Email: form.querySelector("#email").value.trim(),
+        Message: form.querySelector("#message").value.trim(),
       }),
     });
-    window.alert("Message sent!");
-  } catch {
-    window.alert("Something went wrong. Please try again later!");
+    if (!response.ok) throw new Error("Message service returned an error.");
+    const result = await response.json();
+    if (result.success === "false" || result.success === false) {
+      throw new Error("Message was not accepted.");
+    }
+    window.alert("Message sent — thank you!");
+    form.reset();
+    form.classList.remove("was-validated");
+  } catch (error) {
+    console.error(error);
+    window.alert("Something went wrong. Please try again or email bojan@zdelar.com directly.");
+  } finally {
+    submitButton.disabled = false;
+    submitButton.innerHTML = 'Send message <span aria-hidden="true">↗</span>';
   }
-};
-
-const resetForm = () => {
-  document.querySelectorAll("input, textarea").forEach((input) => {
-    input.value = "";
-  });
-};
+});

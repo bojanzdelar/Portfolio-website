@@ -1,162 +1,200 @@
 [
   {
+    "image": "/assets/achievements/2026-ech-k1-1000.jpg",
+    "title": "European Championships 2026",
+    "text": "Fourteenth place in K1 1000m",
+    "location": "Montemor-o-Velho, Portugal"
+  },
+  {
     "image": "/assets/achievements/2025-ech-k1-1000.jpg",
     "title": "European Championships 2025",
-    "text": "Tenth place in K1 1000m"
+    "text": "Tenth place in K1 1000m",
+    "location": "Račice, Czechia"
   },
   {
     "image": "/assets/achievements/2024-eoq-k1-1000.jpg",
     "title": "European Olympic Qualifier 2024",
-    "text": "Third place in K1 1000m"
+    "text": "Third place in K1 1000m",
+    "location": "Szeged, Hungary"
   },
   {
     "image": "/assets/achievements/2022-wch-u23-k1-500.jpg",
     "title": "World U23 Championships 2022",
-    "text": "Bronze medal in K1 500m"
+    "text": "Bronze medal in K1 500m",
+    "location": "Szeged, Hungary"
   },
   {
     "image": "/assets/achievements/2022-wch-u23-k1-1000.jpg",
     "title": "World U23 Championships 2022",
-    "text": "Bronze medal in K1 1000m"
+    "text": "Bronze medal in K1 1000m",
+    "location": "Szeged, Hungary"
   },
   {
     "image": "/assets/achievements/2022-ech-k1-1000.jpg",
     "title": "European Championships 2022",
-    "text": "Sixth place in K1 1000m"
+    "text": "Sixth place in K1 1000m",
+    "location": "Munich, Germany"
   },
   {
     "image": "/assets/achievements/2022-ech-k1-500.jpg",
     "title": "European Championships 2022",
-    "text": "Fourth place in K1 500m"
+    "text": "Fourth place in K1 500m",
+    "location": "Munich, Germany"
   },
   {
     "image": "/assets/achievements/2022-wc-k1-1000.jpg",
     "title": "World Cup 2022",
-    "text": "Ninth place in K1 1000m"
+    "text": "Ninth place in K1 1000m",
+    "location": "Račice, Czechia"
   },
   {
     "image": "/assets/achievements/2022-wc-k2-500-mix.jpg",
     "title": "World Cup 2022",
-    "text": "Fifth place in K2 500m mix"
+    "text": "Fifth place in K2 500m mix",
+    "location": "Račice, Czechia"
   },
   {
     "image": "/assets/achievements/2021-wch-k1-500.jpg",
     "title": "World Championships 2021",
-    "text": "Fourth place in K1 500m"
+    "text": "Fourth place in K1 500m",
+    "location": "Copenhagen, Denmark"
   },
   {
     "image": "/assets/achievements/2021-wch-k1-1000.jpg",
     "title": "World Championships 2021",
-    "text": "Ninth place in K1 1000m"
+    "text": "Ninth place in K1 1000m",
+    "location": "Copenhagen, Denmark"
   },
   {
     "image": "/assets/achievements/2021-wch-u23-k1-500.jpg",
     "title": "World U23 Championships 2021",
-    "text": "Gold medal in K1 500m"
+    "text": "Gold medal in K1 500m",
+    "location": "Montemor-o-Velho, Portugal"
   },
   {
     "image": "/assets/achievements/2021-wch-u23-k1-1000.jpg",
     "title": "World U23 Championships 2021",
-    "text": "Fourth place in K1 1000m"
+    "text": "Fourth place in K1 1000m",
+    "location": "Montemor-o-Velho, Portugal"
   },
   {
     "image": "/assets/achievements/2021-og-k1-1000.jpeg",
     "title": "Olympic Games - Tokyo 2020",
-    "text": "Sixteenth place in K1 1000m"
+    "text": "Sixteenth place in K1 1000m",
+    "location": "Tokyo, Japan"
   },
   {
     "image": "/assets/achievements/2021-ech-k1-1000.jpg",
     "title": "European Championships 2021",
-    "text": "Seventh place in K1 1000m"
+    "text": "Seventh place in K1 1000m",
+    "location": "Poznań, Poland"
   },
   {
     "image": "/assets/achievements/2021-wc-k1-1000.jpg",
     "title": "World Cup 2021",
-    "text": "Sixth place in K1 1000m"
+    "text": "Sixth place in K1 1000m",
+    "location": "Szeged, Hungary"
   },
   {
     "image": "/assets/achievements/2021-eoq-k1-1000.jpg",
     "title": "European Olympic Qualifier 2021",
-    "text": "Sixth place in K1 1000m"
+    "text": "Sixth place in K1 1000m",
+    "location": "Szeged, Hungary"
   },
   {
     "image": "/assets/achievements/2020-wc-k1-1000.jpg",
     "title": "World Cup 2020",
-    "text": "Ninth place in K1 1000m"
+    "text": "Ninth place in K1 1000m",
+    "location": "Szeged, Hungary"
   },
   {
     "image": "/assets/achievements/2019-wch-k1-1000.jpg",
     "title": "World Championships 2019",
-    "text": "Eleventh place in K1 1000m"
+    "text": "Eleventh place in K1 1000m",
+    "location": "Szeged, Hungary"
   },
   {
     "image": "/assets/achievements/2019-ech-u23-k1-1000.jpeg",
     "title": "European U23 Championships 2019",
-    "text": "Gold medal in K1 1000m"
+    "text": "Gold medal in K1 1000m",
+    "location": "Račice, Czechia"
   },
   {
     "image": "/assets/achievements/2019-ech-u23-k1-500.jpeg",
     "title": "European U23 Championships 2019",
-    "text": "Silver medal in K1 500m"
+    "text": "Silver medal in K1 500m",
+    "location": "Račice, Czechia"
   },
   {
     "image": "/assets/achievements/2018-wch-jun-k1-500.png",
     "title": "World Junior Championships 2018",
-    "text": "Bronze medal in K1 500m"
+    "text": "Bronze medal in K1 500m",
+    "location": "Plovdiv, Bulgaria"
   },
   {
     "image": "/assets/achievements/2018-ech-jun-k1-500.jpeg",
     "title": "European Junior Championships 2018",
-    "text": "Silver medal in K1 500m"
+    "text": "Silver medal in K1 500m",
+    "location": "Auronzo di Cadore, Italy"
   },
   {
     "image": "/assets/achievements/2017-oh-k1-500.jpg",
     "title": "Olympic Hopes 2017",
-    "text": "Gold medal in K1 500m"
+    "text": "Gold medal in K1 500m",
+    "location": "Račice, Czechia"
   },
   {
     "image": "/assets/achievements/2017-oh-k1-200.jpg",
     "title": "Olympic Hopes 2017",
-    "text": "Gold medal in K1 200m"
+    "text": "Gold medal in K1 200m",
+    "location": "Račice, Czechia"
   },
   {
     "image": "/assets/achievements/2017-oh-k2-200.jpg",
     "title": "Olympic Hopes 2017",
-    "text": "Silver medal in K2 200m"
+    "text": "Silver medal in K2 200m",
+    "location": "Račice, Czechia"
   },
   {
     "image": "/assets/achievements/2017-wch-jun-k1-500.jpg",
     "title": "World Junior Championships 2017",
-    "text": "Silver medal in K1 500m"
+    "text": "Silver medal in K1 500m",
+    "location": "Pitești, Romania"
   },
   {
     "image": "/assets/achievements/2017-ech-jun-k1-1000.jpg",
     "title": "European Junior Championships 2017",
-    "text": "Bronze medal in K1 1000m"
+    "text": "Bronze medal in K1 1000m",
+    "location": "Belgrade, Serbia"
   },
   {
     "image": "/assets/achievements/2017-ech-jun-k1-500.jpg",
     "title": "European Junior Championships 2017",
-    "text": "Bronze medal in K1 5000m"
+    "text": "Bronze medal in K1 5000m",
+    "location": "Belgrade, Serbia"
   },
   {
     "image": "/assets/achievements/2016-oh-k1-200.jpg",
     "title": "Olympic Hopes 2016",
-    "text": "Gold medal in K1 200m"
+    "text": "Gold medal in K1 200m",
+    "location": "Szeged, Hungary"
   },
   {
     "image": "/assets/achievements/2016-oh-k1-500.jpg",
     "title": "Olympic Hopes 2016",
-    "text": "Gold medal in K1 500m"
+    "text": "Gold medal in K1 500m",
+    "location": "Szeged, Hungary"
   },
   {
     "image": "/assets/achievements/2016-oh-k1-1000.jpg",
     "title": "Olympic Hopes 2016",
-    "text": "Bronze medal in K1 1000m"
+    "text": "Bronze medal in K1 1000m",
+    "location": "Szeged, Hungary"
   },
   {
     "image": "/assets/achievements/2016-ech-jun-k1-500.jpg",
     "title": "European Junior Championships 2016",
-    "text": "Bronze medal in K1 500m"
+    "text": "Bronze medal in K1 500m",
+    "location": "Plovdiv, Bulgaria"
   }
 ]

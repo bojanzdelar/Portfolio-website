@@ -1,31 +1,1089 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Roboto&display=swap");
-
-* {
-  font-family: "Open Sans Condensed", sans-serif;
+:root {
+  --ink: #0b1018;
+  --ink-soft: #111a26;
+  --paper: #f3f4f1;
+  --muted: #89919b;
+  --line: rgba(255,255,255,.14);
+  --line-dark: rgba(11,16,24,.16);
+  --accent: #e63946;
+  --blue: #5ea7ff;
+  --white: #f7f8f6;
+  --font-display: "Manrope", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+::selection { background: var(--accent); color: var(--ink); }
+.site-header { background: var(--ink); color: var(--white); position: relative; }
+.nav-shell { width: min(1280px, calc(100% - 72px)); height: 88px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 10; border-bottom: 1px solid var(--line); }
+.wordmark { display: inline-flex; align-items: center; gap: 12px; }
+.wordmark-mark { width: 39px; height: 39px; display: grid; place-items: center; color: var(--ink); background: var(--accent); font: 800 15px var(--font-display); letter-spacing: -1px; transform: skew(-7deg); }
+.wordmark-name { display: flex; flex-direction: column; gap: 4px; font: 800 12px var(--font-display); letter-spacing: .11em; }
+.wordmark-name span { color: #9ba2ab; font: 600 9px var(--font-body); letter-spacing: .17em; }
+.nav-links { display: flex; align-items: center; gap: clamp(24px, 3.3vw, 48px); }
+.nav-links > a:not(.nav-contact) { color: #c4c8ce; font-size: 12px; font-weight: 600; transition: color .2s; }
+.nav-links > a:hover { color: var(--accent); }
+.nav-contact { padding: 12px 15px; border: 1px solid #4b535f; font-size: 12px; font-weight: 700; transition: color .2s, background .2s, border-color .2s; }
+.nav-contact span { color: var(--accent); margin-left: 12px; }
+.nav-contact:hover { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+.nav-contact:hover span { color: var(--ink); }
+.nav-toggle { display: none; }
+.hero { position: relative; isolation: isolate; min-height: min(790px, calc(100vh - 88px)); overflow: hidden; display: flex; align-items: center; }
+.hero-image { position: absolute; z-index: -3; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 38%; transform: scale(1.01); }
+.hero-background { position: absolute; z-index: -2; inset: 0; background-image: linear-gradient(90deg, rgba(8,13,20,.98) 0%, rgba(8,13,20,.88) 34%, rgba(8,13,20,.42) 66%, rgba(8,13,20,.13) 100%), linear-gradient(0deg, rgba(8,13,20,.75), transparent 45%); }
+.hero-grain { position: absolute; z-index: -2; inset: 0; pointer-events: none; opacity: .12; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E"); }
+.hero-inner { width: min(1280px, calc(100% - 72px)); margin: 0 auto; padding: 88px 0 76px; position: relative; }
+.eyebrow { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 10px; letter-spacing: .18em; font-weight: 700; color: #c5cbd3; }
+.eyebrow-line { display: block; width: 27px; height: 2px; background: var(--accent); }
+.hero h1 { max-width: 760px; margin: 29px 0 23px; font: 800 clamp(68px, 9.6vw, 136px)/.88 var(--font-display); letter-spacing: -.09em; }
+.hero h1 > span { color: var(--accent); }
+.hero h1 em { color: transparent; -webkit-text-stroke: 1.5px var(--white); font-style: normal; }
+.hero-copy { max-width: 440px; margin: 0; color: #c1c7cf; font-size: 15px; line-height: 1.85; }
+.hero-actions { display: flex; align-items: center; gap: 28px; margin-top: 34px; }
+.button { min-height: 49px; display: inline-flex; align-items: center; justify-content: center; gap: 25px; border: 0; padding: 0 19px; font-size: 12px; font-weight: 700; cursor: pointer; transition: transform .2s, background .2s, color .2s; }
+.button:hover { transform: translateY(-2px); }
+.button-primary { background: var(--accent); color: var(--ink); }
+.button-primary:hover { background: #ff525d; }
+.button-primary span { font-size: 17px; }
+.text-link { color: white; font-size: 12px; font-weight: 700; }
+.text-link span { color: var(--accent); padding-left: 10px; font-size: 17px; }
+.hero-bottomline { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid var(--line); margin-top: 83px; padding-top: 19px; color: #b8c0ca; font: 700 9px var(--font-body); letter-spacing: .15em; }
+.status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(230,57,70,.16); vertical-align: 1px; }
+.hero-index { color: #9aa2ad; }
+.hero-index b { color: var(--white); font-weight: 700; }
+.hero-side-label { position: absolute; right: 25px; top: 50%; writing-mode: vertical-rl; transform: translateY(-50%); font-size: 9px; letter-spacing: .23em; color: rgba(255,255,255,.54); }
+.section-pad { padding: 116px max(36px, calc((100vw - 1280px) / 2)); }
+.section-kicker { display: flex; gap: 10px; align-items: center; color: #737d89; font-size: 10px; font-weight: 700; letter-spacing: .15em; }
+.section-kicker span { color: var(--ink); font-variant-numeric: tabular-nums; }
+.intro { background: var(--paper); }
+.intro-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 9%; align-items: start; margin-top: 43px; }
+.section-heading { margin: 0; font: 800 clamp(42px, 5.25vw, 72px)/1.02 var(--font-display); letter-spacing: -.075em; }
+.section-heading span { color: #8c98a7; }
+.intro-copy { padding-top: 4px; max-width: 530px; }
+.intro-copy p { color: #606b77; font-size: 14px; line-height: 1.9; margin: 0 0 16px; }
+.intro-copy .lead { font: 700 20px/1.55 var(--font-display); color: var(--ink); letter-spacing: -.025em; margin-bottom: 19px; }
+.underlined-link { display: inline-flex; align-items: center; gap: 20px; border-bottom: 1px solid #a7afb8; padding: 7px 0 9px; margin-top: 8px; font-size: 12px; font-weight: 700; }
+.underlined-link span { color: #5d89d8; font-size: 16px; }
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 86px; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); }
+.stat { display: flex; flex-direction: column; gap: 8px; padding: 24px 14px 27px 0; }
+.stat + .stat { border-left: 1px solid var(--line-dark); padding-left: 28px; }
+.stat strong { font: 800 clamp(31px, 4vw, 48px)/1 var(--font-display); letter-spacing: -.07em; }
+.stat-plus { font-size: .62em; color: #7b899b; }
+.stat span:not(.stat-plus) { font-size: 11px; color: #697482; }
+.stat-note { color: #89919b; font-size: 10px; margin: 12px 0 0; }
+.achievements { background: var(--ink); color: var(--white); }
+.achievements .section-kicker, .achievements .section-kicker span { color: #a2abb7; }
+.section-title-row { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin: 43px 0 50px; }
+.achievements .section-heading span { color: var(--accent); }
+.section-description { max-width: 325px; margin: 0 0 5px; font-size: 13px; line-height: 1.8; color: #a5aeb9; }
+.achievement-toolbar { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding: 16px 0; color: #aeb6c0; font-size: 9px; font-weight: 700; letter-spacing: .14em; }
+.results-label .status-dot { width: 6px; height: 6px; }
+.results-count { color: #75808d; }
+.achievement-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 27px 20px; }
+.achievement-card { min-width: 0; background: var(--ink-soft); border: 1px solid rgba(255,255,255,.09); transition: border-color .25s, transform .25s; }
+.achievement-card:hover { transform: translateY(-4px); border-color: rgba(230,57,70,.65); }
+.achievement-image-wrap { position: relative; height: 230px; overflow: hidden; background: #1c2733; }
+.achievement-image-wrap::after { position: absolute; content: ""; inset: 45% 0 0; background: linear-gradient(0deg, rgba(11,16,24,.55), transparent); pointer-events: none; }
+.achievement-image { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .45s ease; filter: saturate(.88); }
+.achievement-card:hover .achievement-image { transform: scale(1.04); }
+.achievement-number { position: absolute; z-index: 1; top: 13px; left: 14px; font: 700 10px var(--font-body); letter-spacing: .12em; color: white; text-shadow: 0 1px 9px #000; }
+.achievement-info { min-height: 118px; padding: 19px 18px 17px; }
+.achievement-tag { display: block; color: var(--accent); font-size: 9px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 10px; }
+.achievement-info h3 { font: 700 16px/1.35 var(--font-display); letter-spacing: -.025em; margin: 0 0 8px; }
+.achievement-info p { color: #9fa9b4; font-size: 12px; line-height: 1.5; margin: 0; }
+.pagination-wrap { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); margin-top: 38px; padding-top: 22px; }
+.page-control { min-height: 43px; border: 1px solid #3b4552; background: transparent; color: #e9edf1; padding: 0 14px; font-size: 11px; display: inline-flex; align-items: center; gap: 12px; cursor: pointer; transition: border-color .2s, color .2s; }
+.page-control:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.page-control:disabled { opacity: .3; cursor: not-allowed; }
+.page-indicator { font: 700 11px var(--font-body); color: var(--white); letter-spacing: .1em; }
+.page-indicator i { margin: 0 9px; color: #687381; font-style: normal; }
+.statement { background: var(--accent); color: var(--ink); position: relative; overflow: hidden; }
+.statement-inner { max-width: 1280px; margin: 0 auto; padding: 94px 36px 92px; position: relative; z-index: 1; }
+.statement .eyebrow { color: #354019; }
+.statement .eyebrow-line { background: var(--ink); }
+.statement blockquote { margin: 40px 0 29px; font: 800 clamp(44px, 7.2vw, 91px)/.98 var(--font-display); letter-spacing: -.075em; }
+.statement blockquote em { font-style: normal; color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+.statement-caption { font: 700 9px var(--font-body); letter-spacing: .18em; }
+.statement-number { position: absolute; right: -15px; bottom: -180px; font: 800 clamp(250px, 43vw, 560px)/1 var(--font-display); color: rgba(11,16,24,.055); letter-spacing: -.12em; }
+.partners { background: #e8eae6; }
+.partners-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin: 43px 0 53px; }
+.partners .section-heading span { color: #8492a2; }
+.partners .section-description { color: #66717d; }
+.partner-logos { display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; border-top: 1px solid rgba(11,16,24,.17); border-bottom: 1px solid rgba(11,16,24,.17); }
+.partner-logos a { min-height: 156px; padding: 28px 25px; display: flex; align-items: center; justify-content: center; filter: grayscale(1); opacity: .65; transition: opacity .25s, filter .25s; }
+.partner-logos a + a { border-left: 1px solid rgba(11,16,24,.17); }
+.partner-logos a:hover { filter: grayscale(0); opacity: 1; }
+.partner-logos img { display: block; max-width: 180px; width: 80%; max-height: 75px; object-fit: contain; }
+.contact { background: var(--ink); color: var(--white); }
+.contact .section-kicker, .contact .section-kicker span { color: #9ca6b2; }
+.contact-layout { display: grid; grid-template-columns: .95fr 1.05fr; gap: 10%; margin-top: 43px; }
+.contact .section-heading span { color: var(--accent); }
+.contact-intro > p { max-width: 330px; color: #9da7b3; font-size: 13px; line-height: 1.8; margin: 23px 0 27px; }
+.contact-email { display: inline-flex; gap: 20px; align-items: center; font: 700 clamp(15px, 2vw, 20px) var(--font-display); padding-bottom: 9px; border-bottom: 1px solid #515b67; }
+.contact-email span { color: var(--accent); font-size: 17px; }
+.social-links { display: flex; flex-wrap: wrap; gap: 19px; margin-top: 44px; }
+.social-links a { font-size: 11px; color: #aeb7c1; }
+.social-links a span { margin-left: 7px; color: var(--accent); }
+.contact-form { padding-top: 2px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+.field { display: flex; flex-direction: column; margin-bottom: 24px; }
+.field label { font-size: 9px; font-weight: 700; letter-spacing: .14em; color: #adb6c1; margin-bottom: 10px; }
+.field input, .field textarea { width: 100%; border: 1px solid #37414e; border-radius: 0; background: #111a26; color: var(--white); outline: none; padding: 14px 13px; font-size: 12px; resize: vertical; transition: border-color .2s; }
+.field input { height: 48px; }
+.field textarea { min-height: 128px; }
+.field input::placeholder, .field textarea::placeholder { color: #67727f; }
+.field input:focus, .field textarea:focus { border-color: var(--accent); }
+.invalid-feedback { display: none; color: #ff9494; font-size: 11px; margin-top: 7px; }
+.field input:invalid:not(:placeholder-shown) ~ .invalid-feedback, .field textarea:invalid:not(:placeholder-shown) ~ .invalid-feedback, .was-validated .field input:invalid ~ .invalid-feedback, .was-validated .field textarea:invalid ~ .invalid-feedback { display: block; }
+.was-validated .field input:invalid, .was-validated .field textarea:invalid { border-color: #ff7777; }
+.submit-button { min-width: 175px; }
+.form-note { color: #74808d; font-size: 10px; margin: 13px 0 0; }
+.site-footer { min-height: 105px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: #080c12; color: #8c96a2; padding: 22px max(36px, calc((100vw - 1280px) / 2)); }
+.footer-wordmark .wordmark-mark { width: 34px; height: 34px; font-size: 13px; }
+.footer-wordmark .wordmark-name { color: white; font-size: 10px; }
+.footer-wordmark .wordmark-name span { font-size: 8px; }
+.site-footer > p, .site-footer > span { margin: 0; font-size: 9px; font-weight: 700; letter-spacing: .13em; }
+.site-footer > p { color: #626c79; }
+@media (min-width: 1500px) { .hero-inner, .nav-shell { width: min(1360px, calc(100% - 100px)); } }
+@media (max-width: 900px) {
+  .nav-shell, .hero-inner { width: calc(100% - 48px); }
+  .hero { min-height: 700px; }
+  .hero-background { background-position: 58% center; background-image: linear-gradient(90deg, rgba(8,13,20,.97), rgba(8,13,20,.74) 60%, rgba(8,13,20,.4)), linear-gradient(0deg, rgba(8,13,20,.75), transparent 50%); }
+  .section-pad { padding: 90px 24px; }
+  .intro-layout { gap: 6%; }
+  .achievement-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .achievement-image-wrap { height: 220px; }
+  .contact-layout { gap: 6%; }
+  .statement-inner { padding: 80px 24px; }
+  .site-footer { padding: 22px 24px; }
+}
+@media (max-width: 650px) {
+  html { scroll-padding-top: 70px; }
+  .nav-shell { width: calc(100% - 36px); height: 72px; }
+  .wordmark-mark { width: 35px; height: 35px; }
+  .wordmark-name { font-size: 10px; }
+  .nav-toggle { display: flex; flex-direction: column; gap: 6px; width: 43px; height: 43px; align-items: center; justify-content: center; background: transparent; border: 1px solid #3b4552; cursor: pointer; }
+  .nav-toggle span { display: block; width: 17px; height: 1px; background: white; transition: transform .2s; }
+  .nav-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+  .nav-links { display: none; position: absolute; top: 71px; left: -18px; right: -18px; padding: 15px 18px 22px; background: var(--ink); border-bottom: 1px solid #303a46; flex-direction: column; align-items: stretch; gap: 0; }
+  .nav-links.is-open { display: flex; }
+  .nav-links > a:not(.nav-contact) { padding: 15px 3px; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .nav-contact { margin-top: 15px; text-align: center; }
+  .hero { min-height: 680px; min-height: calc(100svh - 72px); }
+  .hero-inner { width: calc(100% - 36px); padding: 70px 0 30px; }
+  .hero-background { background-position: 60% center; background-image: linear-gradient(90deg, rgba(8,13,20,.94), rgba(8,13,20,.75) 68%, rgba(8,13,20,.51)), linear-gradient(0deg, rgba(8,13,20,.8), transparent 55%); }
+  .hero h1 { font-size: clamp(62px, 16.5vw, 90px); margin: 25px 0 20px; }
+  .hero-copy { max-width: 360px; font-size: 13px; line-height: 1.8; }
+  .hero-actions { flex-wrap: wrap; gap: 21px; margin-top: 28px; }
+  .button { min-height: 46px; padding: 0 14px; gap: 16px; }
+  .hero-bottomline { margin-top: 55px; padding-top: 16px; font-size: 8px; }
+  .hero-side-label { right: 8px; font-size: 8px; }
+  .section-pad { padding: 74px 18px; }
+  .section-kicker { font-size: 9px; }
+  .intro-layout, .contact-layout { grid-template-columns: 1fr; gap: 27px; margin-top: 33px; }
+  .section-heading { font-size: clamp(42px, 12vw, 60px); }
+  .intro-copy .lead { font-size: 18px; }
+  .intro-copy p { font-size: 13px; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); margin-top: 52px; }
+  .stat { padding: 21px 8px 22px 0; }
+  .stat + .stat { padding-left: 17px; }
+  .stat:nth-child(3) { border-left: 0; border-top: 1px solid var(--line-dark); }
+  .stat:nth-child(4) { border-top: 1px solid var(--line-dark); }
+  .stat strong { font-size: 38px; }
+  .stat-note { font-size: 9px; line-height: 1.6; }
+  .section-title-row, .partners-heading { align-items: start; flex-direction: column; gap: 19px; margin: 33px 0 31px; }
+  .section-description { max-width: 390px; font-size: 12px; }
+  .achievement-grid { grid-template-columns: 1fr; gap: 16px; }
+  .achievement-image-wrap { height: clamp(215px, 65vw, 330px); }
+  .achievement-info { min-height: auto; padding: 17px; }
+  .achievement-info h3 { font-size: 16px; }
+  .pagination-wrap { margin-top: 25px; }
+  .page-control { padding: 0 10px; gap: 8px; min-height: 40px; }
+  .statement-inner { padding: 68px 18px 70px; }
+  .statement blockquote { margin: 32px 0 24px; font-size: clamp(44px, 12.3vw, 65px); }
+  .statement-number { right: -25px; bottom: -90px; font-size: 300px; }
+  .partner-logos a { min-height: 108px; padding: 18px 10px; }
+  .partner-logos img { max-height: 47px; width: 91%; }
+  .contact-layout { margin-top: 33px; gap: 40px; }
+  .contact-intro > p { margin: 18px 0 22px; }
+  .social-links { margin-top: 30px; gap: 16px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .field { margin-bottom: 20px; }
+  .site-footer { align-items: flex-start; flex-wrap: wrap; padding: 23px 18px; gap: 22px; }
+  .site-footer > p { order: 3; flex-basis: 100%; margin-left: 1px; }
+  .site-footer > span { margin-left: auto; align-self: center; font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+/* Red is the signature accent throughout the athlete identity. */
+:root { --accent: #e63946; }
+.statement { background: #e63946; }
+.statement .eyebrow-line { background: var(--ink); }
+@media (min-width: 901px) {
+  .hero-background { background-position: center 42%; }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
+/* Athlete photography: race action leads, the ceremony image anchors the story. */
+.intro-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .72fr);
+  align-items: stretch;
+  gap: clamp(34px, 6vw, 84px);
+}
+.intro-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(28px, 4vw, 48px);
+  padding-top: 2px;
+}
+.intro-copy { max-width: 580px; }
+.about-photo {
+  margin: 0;
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: #d5d7d4;
+  position: relative;
+}
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  max-height: 760px;
+  object-fit: contain;
+  object-position: center center;
+  background: #d5d7d4;
+}
+.about-photo figcaption {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 13px 14px;
+  background: #e8eae6;
+  color: #56616d;
+  font: 700 8px/1.4 var(--font-body);
+  letter-spacing: .12em;
+}
+.about-photo figcaption span:first-child { color: #c82632; }
+@media (max-width: 900px) {
+  .intro-layout { grid-template-columns: minmax(0, 1fr) minmax(260px, .8fr); gap: 30px; }
+  .about-photo img { min-height: 460px; max-height: 620px; }
+}
+@media (max-width: 650px) {
+  .intro-layout { grid-template-columns: 1fr; gap: 33px; }
+  .intro-main { gap: 25px; }
+  .about-photo { width: min(100%, 440px); margin-inline: auto; }
+  .about-photo img { min-height: 0; height: auto; max-height: none; object-fit: contain; }
+  .about-photo figcaption { padding: 11px 12px; font-size: 7px; }
 }
 
-header {
-  background-image: url("/assets/header.jpg");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  height: 100vh;
+/* Keep the racing photograph as a real HTML image, with CSS used only for framing and overlays. */
+.hero-background { background-size: cover; background-position: center; }
+@media (max-width: 900px) {
+  .hero-image { object-position: 58% center; }
+}
+@media (max-width: 650px) {
+  .hero-image { object-position: 60% center; }
 }
 
-.bg-secondary {
-  background-color: #e8e8e8 !important;
+/* Keep the athlete clear of the headline: bias the action photo to the right. */
+.hero-image {
+  object-position: center 38%;
+  transform: scale(1.12) translateX(4%);
+}
+@media (max-width: 900px) {
+  .hero-image {
+    object-position: 46% center;
+    transform: scale(1.12) translateX(3%);
+  }
+}
+@media (max-width: 650px) {
+  .hero-image {
+    object-position: 44% center;
+    transform: scale(1.04) translateX(0);
+  }
 }
 
-article.card img {
-  height: 300px;
-  object-fit: cover;
+/* More breathing room around the athlete in the hero image. */
+.hero-image {
+  transform: scale(1.02) translateX(2%);
 }
+@media (max-width: 900px) {
+  .hero-image { transform: scale(1.02) translateX(2%); }
+}
+@media (max-width: 650px) {
+  .hero-image { transform: scale(1.0) translateX(0); }
+}
+
+/* Career highlights: titles and personal bests are the main proof points. */
+.champion-highlight {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding: 18px 22px;
+  color: var(--ink);
+  background: var(--accent);
+}
+.champion-label {
+  font: 700 10px/1.5 var(--font-body);
+  letter-spacing: .15em;
+}
+.champion-highlight strong {
+  font: 800 clamp(21px, 3.2vw, 34px)/1.15 var(--font-display);
+  letter-spacing: -.05em;
+}
+.personal-bests {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 0;
+  margin-top: 14px;
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+}
+.personal-best-heading {
+  padding: 20px 18px 20px 0;
+  font: 700 9px/1.5 var(--font-body);
+  letter-spacing: .15em;
+  color: #697482;
+}
+.personal-best {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 24px;
+  border-left: 1px solid var(--line-dark);
+}
+.personal-best span {
+  color: #697482;
+  font: 700 9px/1.5 var(--font-body);
+  letter-spacing: .14em;
+}
+.personal-best strong {
+  color: var(--ink);
+  font: 800 clamp(25px, 3vw, 38px)/1 var(--font-display);
+  letter-spacing: -.055em;
+  font-variant-numeric: tabular-nums;
+}
+.page-indicator { letter-spacing: 0; font-size: 11px; }
+@media (max-width: 650px) {
+  .champion-highlight { align-items: flex-start; flex-direction: column; gap: 5px; padding: 17px; }
+  .personal-bests { grid-template-columns: 1fr 1fr; }
+  .personal-best-heading { grid-column: 1 / -1; padding: 15px 0 9px; }
+  .personal-best { padding: 16px 12px 18px 0; }
+  .personal-best + .personal-best { padding-left: 14px; }
+  .personal-best strong { font-size: clamp(24px, 7vw, 34px); }
+}
+
+/* On the record: put honours and personal bests together as the main performance story. */
+.record-highlights { margin: 0 0 44px; }
+.achievements .stats-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0;
+  border-color: var(--line);
+}
+.achievements .stat { padding: 22px 18px 24px 0; }
+.achievements .stat + .stat { border-left-color: var(--line); padding-left: 22px; }
+.achievements .stat strong { color: var(--white); font-size: clamp(36px, 4vw, 52px); }
+.achievements .stat span:not(.stat-plus) { color: #bac3cd; font-size: 14px; line-height: 1.5; }
+.achievements .stat-plus { color: #bac3cd; }
+.achievements .champion-highlight {
+  color: var(--ink); background: var(--accent); padding: 23px 26px;
+  margin-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.achievements .champion-label { font-size: 12px; line-height: 1.5; letter-spacing: .14em; }
+.achievements .champion-highlight strong { font-size: clamp(24px, 3.8vw, 44px); }
+.achievements .personal-bests {
+  display: grid; grid-template-columns: minmax(130px, .7fr) repeat(2, minmax(0, 1fr));
+  margin-top: 16px; border-color: var(--line);
+}
+.achievements .personal-best-heading { color: #c5ccd5; font-size: 12px; padding: 23px 16px 23px 0; }
+.achievements .personal-best { border-left-color: var(--line); padding: 20px 22px; }
+.achievements .personal-best span { color: #b1bac5; font-size: 12px; }
+.achievements .personal-best strong {
+  color: var(--white); font-size: clamp(29px, 3.7vw, 44px);
+}
+.achievement-toolbar { font-size: 11px; }
+.results-count { font-size: 12px; }
+.achievement-info h3 { font-size: 18px; }
+.achievement-info p { font-size: 14px; line-height: 1.65; }
+.achievement-tag { font-size: 11px; }
+.page-control { font-size: 14px; }
+.page-indicator { font-size: 13px; }
+.partner-logos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 920px; margin-inline: auto;
+}
+
+/* Supporting UI/body type is larger; display heading sizes remain untouched. */
+.nav-links > a:not(.nav-contact), .nav-contact { font-size: 14px; }
+.eyebrow { font-size: 11px; }
+.hero-copy { font-size: 17px; }
+.hero-bottomline { font-size: 11px; }
+.hero-side-label { font-size: 10px; }
+.section-kicker { font-size: 12px; }
+.intro-copy p { font-size: 16px; line-height: 1.85; }
+.intro-copy .lead { font-size: 22px; }
+.underlined-link { font-size: 14px; }
+.section-description { font-size: 15px; }
+.statement-caption { font-size: 11px; }
+.contact-intro > p { font-size: 15px; }
+.social-links a { font-size: 13px; }
+.field label { font-size: 11px; }
+.field input, .field textarea { font-size: 15px; }
+.invalid-feedback { font-size: 13px; }
+.form-note { font-size: 12px; }
+.site-footer > span { font-size: 11px; }
+.footer-wordmark .wordmark-name { font-size: 11px; }
+.footer-wordmark .wordmark-name span { font-size: 9px; }
+.about-photo figcaption { font-size: 10px; }
+@media (max-width: 900px) {
+  .achievements .stat { padding-right: 12px; }
+  .achievements .stat + .stat { padding-left: 16px; }
+  .achievements .personal-best { padding-inline: 15px; }
+}
+@media (max-width: 650px) {
+  .record-highlights { margin-bottom: 34px; }
+  .achievements .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .achievements .stat { padding: 18px 8px 19px 0; }
+  .achievements .stat + .stat { padding-left: 15px; }
+  .achievements .stat:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+  .achievements .champion-highlight { align-items: flex-start; flex-direction: column; padding: 20px; }
+  .achievements .personal-bests { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .achievements .personal-best-heading { grid-column: 1 / -1; padding: 15px 0 8px; }
+  .achievements .personal-best { padding: 15px 10px 18px 0; }
+  .achievements .personal-best + .personal-best { padding-left: 14px; }
+  .achievements .personal-best span { font-size: 11px; }
+  .achievements .personal-best strong { font-size: clamp(26px, 7.4vw, 36px); }
+  .hero-copy { font-size: 15px; }
+  .intro-copy p { font-size: 15px; }
+  .intro-copy .lead { font-size: 19px; }
+  .section-kicker { font-size: 11px; }
+  .section-description { font-size: 14px; }
+  .achievement-info h3 { font-size: 18px; }
+  .achievement-info p { font-size: 14px; }
+  .partner-logos a { min-height: 122px; padding: 20px 15px; }
+  .partner-logos img { max-height: 58px; }
+  .site-footer > span { font-size: 10px; }
+}
+
+/* Rebuilt On the Record into a deliberate hierarchy: milestones, title, personal bests, archive. */
+.record-highlights {
+  display: grid;
+  gap: 18px;
+  margin: 0 0 48px;
+}
+.achievements .record-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid rgba(255,255,255,.13);
+  background: #101722;
+}
+.achievements .record-stat {
+  min-width: 0;
+  padding: 22px 24px 24px;
+}
+.achievements .record-stat + .record-stat {
+  border-left: 1px solid rgba(255,255,255,.13);
+}
+.record-stat-label {
+  display: block;
+  min-height: 32px;
+  color: #acb5c0;
+  font: 700 11px/1.5 var(--font-body);
+  letter-spacing: .12em;
+}
+.record-stat strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--white);
+  font: 800 clamp(38px, 4.5vw, 54px)/1 var(--font-display);
+  letter-spacing: -.065em;
+  font-variant-numeric: tabular-nums;
+}
+.record-stat strong span { color: var(--accent); }
+.record-stat p {
+  margin: 9px 0 0;
+  color: #b5bec8;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.record-feature-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.champion-card {
+  min-height: 260px;
+  padding: clamp(24px, 3vw, 38px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+  overflow: hidden;
+  background: var(--accent);
+  color: var(--ink);
+}
+.feature-eyebrow {
+  display: block;
+  color: inherit;
+  font: 800 11px/1.5 var(--font-body);
+  letter-spacing: .16em;
+}
+.champion-card .olympian-eyebrow {
+  margin-bottom: 1px;
+  font-size: clamp(15px, 1.45vw, 18px);
+  line-height: 1.25;
+  letter-spacing: .12em;
+  font-weight: 800;
+}
+.champion-card .champion-title {
+  margin: 0;
+  max-width: 100%;
+  font: 800 clamp(32px, 3.5vw, 46px)/.98 var(--font-display);
+  letter-spacing: -.055em;
+  position: relative;
+  z-index: 1;
+  overflow-wrap: normal;
+}
+.champion-card .champion-title span {
+  display: block;
+  color: var(--white);
+}
+.champion-mark {
+  position: absolute;
+  right: -14px;
+  bottom: -54px;
+  color: rgba(11,16,24,.08);
+  font: 800 190px/1 var(--font-display);
+  letter-spacing: -.13em;
+}
+.personal-bests-card {
+  display: flex;
+  flex-direction: column;
+  background: #101722;
+  border: 1px solid rgba(255,255,255,.13);
+  min-width: 0;
+}
+.personal-best-header {
+  padding: 23px 25px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+}
+.personal-best-header .feature-eyebrow { color: var(--accent); }
+.personal-best-header h3 {
+  margin: 9px 0 0;
+  color: var(--white);
+  font: 700 23px/1.2 var(--font-display);
+  letter-spacing: -.04em;
+}
+.personal-best-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 23px 25px;
+  flex: 1;
+}
+.personal-best-row + .personal-best-row {
+  border-top: 1px solid rgba(255,255,255,.13);
+}
+.personal-best-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.best-distance {
+  color: #b2bbc5;
+  font: 700 11px/1.5 var(--font-body);
+  letter-spacing: .13em;
+}
+.personal-best-row strong {
+  color: var(--white);
+  font: 800 clamp(31px, 3.6vw, 43px)/1 var(--font-display);
+  letter-spacing: -.055em;
+  font-variant-numeric: tabular-nums;
+}
+.best-arrow {
+  color: var(--accent);
+  font-size: 22px;
+}
+.achievement-toolbar {
+  margin-top: 2px;
+  padding-top: 21px;
+}
+.archive-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 28px 0;
+  color: #c0c7d0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.archive-error { color: #ffb9bd; }
+.achievement-image-wrap.image-unavailable::after {
+  content: "PHOTO UNAVAILABLE";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #b2bbc5;
+  font: 700 11px var(--font-body);
+  letter-spacing: .12em;
+}
+@media (max-width: 900px) {
+  .achievements .record-stat { padding: 20px 17px; }
+  .record-stat-label { font-size: 10px; }
+  .record-stat p { font-size: 13px; }
+  .record-feature-grid { grid-template-columns: 1fr 1fr; }
+  .personal-best-row { padding: 21px 18px; }
+  .personal-best-header { padding: 21px 18px 16px; }
+  .personal-best-row strong { font-size: clamp(28px, 3.7vw, 38px); }
+}
+@media (max-width: 650px) {
+  .record-highlights { gap: 12px; margin-bottom: 34px; }
+  .achievements .record-stats { grid-template-columns: 1fr; }
+  .achievements .record-stat { padding: 17px 18px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 14px; align-items: center; }
+  .achievements .record-stat + .record-stat { border-left: 0; border-top: 1px solid rgba(255,255,255,.13); }
+  .record-stat-label { min-height: 0; grid-column: 1; }
+  .record-stat strong { margin: 0; grid-column: 2; grid-row: 1 / span 2; font-size: 37px; }
+  .record-stat p { margin: 0; grid-column: 1; font-size: 13px; }
+  .record-feature-grid { grid-template-columns: 1fr; gap: 12px; }
+  .champion-card { min-height: 230px; padding: 25px; gap: 13px; }
+  .champion-card .champion-title { font-size: clamp(31px, 8.4vw, 42px); }
+  .champion-card .olympian-eyebrow { font-size: 15px; }
+  .personal-best-header { padding: 20px 20px 16px; }
+  .personal-best-row { padding: 19px 20px; }
+  .personal-best-row strong { font-size: clamp(34px, 10vw, 43px); }
+  .archive-status { font-size: 14px; }
+}
+
+/* Only two current partners: give both equal visual weight instead of leaving an empty third column. */
+.partner-logos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 920px;
+  margin-inline: auto;
+}
+.partner-logos a {
+  min-height: 170px;
+  padding: 30px;
+}
+@media (max-width: 650px) {
+  .partner-logos a { min-height: 122px; padding: 20px 15px; }
+}
+
+/* Further zoom out the hero race image while keeping the right-shifted focal point. */
+.hero-image { transform: scale(.94) translateX(4%); }
+@media (max-width: 900px) {
+  .hero-image { transform: scale(.96) translateX(3%); }
+}
+@media (max-width: 650px) {
+  .hero-image { transform: scale(.98) translateX(1%); }
+}
+.achievement-location {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+
+/* Return to the previous hero crop before the latest zoom-out adjustment. */
+.hero-image { transform: scale(1.02) translateX(2%); }
+@media (max-width: 900px) {
+  .hero-image { transform: scale(1.02) translateX(2%); }
+}
+@media (max-width: 650px) {
+  .hero-image { transform: scale(1.0) translateX(0); }
+}
+
+/* Simpler personal wordmark: name first, one restrained red dot, no monogram or subtitle. */
+.wordmark-simple { gap: 0; }
+.wordmark-simple .wordmark-name {
+  display: block;
+  color: var(--white);
+  font: 800 15px/1.1 var(--font-display);
+  letter-spacing: .055em;
+  white-space: nowrap;
+}
+.wordmark-simple .wordmark-accent {
+  display: inline;
+  color: var(--accent);
+  font: inherit;
+  letter-spacing: inherit;
+}
+.footer-wordmark .wordmark-name { font-size: 13px; }
+
+/* Increase prominence of the championship level above the U23 Champion title. */
+.champion-card .feature-eyebrow {
+  font-size: clamp(15px, 1.45vw, 18px);
+  line-height: 1.35;
+  letter-spacing: .105em;
+  font-weight: 800;
+}
+@media (max-width: 650px) {
+  .wordmark-simple .wordmark-name { font-size: 13px; }
+  .footer-wordmark .wordmark-name { font-size: 12px; }
+  .champion-card .feature-eyebrow { font-size: 15px; }
+}
+
+/* Selected ZDELAR racing wordmark. */
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 184px;
+  height: 40px;
+  flex: 0 0 auto;
+  text-decoration: none;
+  transition: opacity .2s, transform .2s;
+}
+.brand-link:hover {
+  opacity: .88;
+  transform: translateY(-1px);
+}
+.brand-mark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.footer-brand-link {
+  width: 154px;
+  height: 34px;
+}
+@media (max-width: 650px) {
+  .brand-link { width: 154px; height: 34px; }
+  .footer-brand-link { width: 132px; height: 30px; }
+}
+
+
+/* Give the two current partners more presence, full color, and a left-aligned layout. */
+.partner-logos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1040px;
+  margin: 0;
+}
+.partner-logos a {
+  min-height: 190px;
+  padding: 30px 28px 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  filter: none;
+  opacity: 1;
+  transition: opacity .2s;
+}
+.partner-logos a + a {
+  padding-left: 34px;
+}
+.partner-logos a:hover {
+  opacity: .86;
+  filter: none;
+}
+.partner-logos img {
+  display: block;
+  width: 92%;
+  max-width: 280px;
+  max-height: 108px;
+  object-fit: contain;
+  filter: saturate(1.18) contrast(1.08);
+}
+@media (max-width: 900px) {
+  .partner-logos { max-width: 100%; }
+  .partner-logos a { min-height: 160px; }
+  .partner-logos img { max-height: 82px; }
+}
+@media (max-width: 650px) {
+  .partner-logos a {
+    min-height: 138px;
+    padding: 18px 10px 18px 0;
+  }
+  .partner-logos a + a { padding-left: 16px; }
+  .partner-logos img {
+    width: 96%;
+    max-height: 66px;
+  }
+}
+
+
+/* Partner section refresh: tighter layout, balanced marks, subdued grayscale. */
+.partners {
+  background: #e8eae6;
+  padding-top: 92px;
+  padding-bottom: 92px;
+}
+.partners-heading {
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 36px;
+  max-width: 930px;
+  margin: 28px 0 32px;
+}
+.partners .section-description {
+  max-width: 330px;
+  margin-bottom: 4px;
+  color: #626b75;
+}
+.partner-logos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 880px;
+  margin: 0;
+  border-top: 1px solid rgba(11,16,24,.2);
+  border-bottom: 1px solid rgba(11,16,24,.2);
+}
+.partner-logos a {
+  min-height: 132px;
+  padding: 22px 24px 22px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  filter: none;
+  opacity: 1;
+  transition: opacity .2s;
+}
+.partner-logos a + a {
+  padding-left: 28px;
+  border-left: 1px solid rgba(11,16,24,.2);
+}
+.partner-logos a:hover {
+  opacity: .82;
+}
+.partner-logos img {
+  display: block;
+  width: 82%;
+  max-width: 220px;
+  max-height: 68px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(.8) contrast(1.08);
+  transition: filter .25s;
+}
+.partner-logos a:hover img {
+  filter: grayscale(0) brightness(1) contrast(1);
+}
+@media (max-width: 900px) {
+  .partners {
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+  .partners-heading {
+    max-width: 100%;
+    margin: 26px 0 28px;
+  }
+  .partner-logos {
+    max-width: 100%;
+  }
+  .partner-logos a {
+    min-height: 118px;
+  }
+  .partner-logos img {
+    max-height: 60px;
+  }
+}
+@media (max-width: 650px) {
+  .partners {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .partners-heading {
+    display: block;
+    margin: 24px 0 25px;
+  }
+  .partners .section-description {
+    max-width: 350px;
+    margin-top: 13px;
+  }
+  .partner-logos a {
+    min-height: 98px;
+    padding: 15px 10px 15px 0;
+  }
+  .partner-logos a + a {
+    padding-left: 14px;
+  }
+  .partner-logos img {
+    width: 100%;
+    max-height: 48px;
+  }
+}
+
+
+/* Four partner marks: federation and club first, followed by equipment partners. */
+.partner-logos {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1120px;
+}
+.partner-logos a {
+  min-width: 0;
+  min-height: 122px;
+  padding: 20px 18px;
+  justify-content: center;
+}
+.partner-logos a + a {
+  padding-left: 18px;
+  border-left: 1px solid rgba(11,16,24,.2);
+}
+.partner-logos img {
+  width: 100%;
+  max-width: 178px;
+  max-height: 62px;
+  filter: grayscale(1) brightness(.76) contrast(1.1);
+}
+.partner-logos a:hover img {
+  filter: grayscale(0) brightness(1) contrast(1);
+}
+@media (max-width: 900px) {
+  .partner-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 800px;
+  }
+  .partner-logos a {
+    min-height: 112px;
+    padding: 18px;
+  }
+  .partner-logos a + a {
+    padding-left: 18px;
+    border-left: 0;
+  }
+  .partner-logos a:nth-child(even) {
+    border-left: 1px solid rgba(11,16,24,.2);
+    padding-left: 22px;
+  }
+  .partner-logos a:nth-child(odd) {
+    padding-left: 0;
+  }
+  .partner-logos img {
+    max-width: 190px;
+    max-height: 58px;
+  }
+}
+@media (max-width: 650px) {
+  .partner-logos a {
+    min-height: 98px;
+    padding: 15px 10px;
+  }
+  .partner-logos a:nth-child(even) {
+    padding-left: 14px;
+  }
+  .partner-logos img {
+    max-height: 48px;
+  }
+}
+
+
+/* Return the partner section to two balanced equipment partners. */
+.partner-logos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 880px;
+  margin: 0;
+}
+.partner-logos a {
+  min-height: 132px;
+  padding: 22px 24px 22px 0;
+  justify-content: flex-start;
+}
+.partner-logos a + a {
+  padding-left: 28px;
+  border-left: 1px solid rgba(11,16,24,.2);
+}
+.partner-logos img {
+  width: 82%;
+  max-width: 220px;
+  max-height: 68px;
+  filter: grayscale(1) brightness(.76) contrast(1.1);
+}
+.partner-logos a:hover img {
+  filter: grayscale(0) brightness(1) contrast(1);
+}
+@media (max-width: 900px) {
+  .partner-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 800px;
+  }
+  .partner-logos a { min-height: 118px; }
+  .partner-logos a + a {
+    padding-left: 22px;
+    border-left: 1px solid rgba(11,16,24,.2);
+  }
+  .partner-logos img { max-height: 60px; }
+}
+@media (max-width: 650px) {
+  .partner-logos a {
+    min-height: 98px;
+    padding: 15px 10px 15px 0;
+  }
+  .partner-logos a + a { padding-left: 14px; }
+  .partner-logos img {
+    width: 100%;
+    max-height: 48px;
+  }
+}
+
+
+/* Full wordmark in both header and footer; the standalone Z is reserved for the favicon. */
+.footer-brand-link {
+  width: 154px;
+  height: 34px;
+}
+@media (max-width: 650px) {
+  .footer-brand-link {
+    width: 132px;
+    height: 30px;
+  }
+}
+
+/* Improve small-text legibility without changing the overall layout. */
+.eyebrow,
+.section-kicker { font-size: 12px; }
+.section-kicker { letter-spacing: .08em; }
+.hero-copy { font-size: 17px; line-height: 1.75; }
+.intro-copy p { font-size: 16px; line-height: 1.82; }
+.intro-copy .lead { font-size: 23px; line-height: 1.5; }
+.section-description,
+.contact-intro > p { font-size: 15px; line-height: 1.8; }
+.underlined-link,
+.text-link,
+.button { font-size: 13px; }
+.achievement-toolbar { font-size: 11px; letter-spacing: .1em; }
+.achievement-tag { font-size: 11px; }
+.achievement-info p { font-size: 14px; line-height: 1.65; }
+.page-control,
+.page-indicator { font-size: 13px; }
+.record-stat-label { font-size: 12px; }
+.record-stat p { font-size: 15px; }
+.best-distance { font-size: 12px; }
+.feature-eyebrow { font-size: 12px; }
+.contact-intro > p { max-width: 370px; }
+.social-links a { font-size: 13px; }
+.field label,
+.form-note { font-size: 12px; }
+
+@media (max-width: 650px) {
+  .eyebrow,
+  .section-kicker { font-size: 11px; }
+  .hero-copy { font-size: 15px; }
+  .intro-copy p { font-size: 14px; }
+  .intro-copy .lead { font-size: 20px; }
+  .section-description,
+  .contact-intro > p { font-size: 14px; }
+}
+

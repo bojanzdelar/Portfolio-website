@@ -1,288 +1,392 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Bojan Zdelar" />
-    <meta name="keywords" content="Bojan Zdelar" />
+    <meta
+      name="description"
+      content="Bojan Zdelar — Serbian Olympic kayak sprint athlete competing in K1 500m and 1000m."
+    />
+    <meta
+      name="keywords"
+      content="Bojan Zdelar, canoe sprint, canoe, kayak sprint, kayak, K1 500m, K1 1000m, Serbian Olympic athlete"
+    />
     <meta name="author" content="Bojan Zdelar" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="/assets/logo.png" />
-
-    <!-- Bootstrap 5 -->
+    <meta name="theme-color" content="#0b1018" />
+    <link rel="icon" type="image/svg+xml" href="assets/zdelar-z.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/achievements.js" defer></script>
-    <script src="js/pagination.js" defer></script>
     <script src="js/contact.js" defer></script>
     <script src="js/copyright.js" defer></script>
-
-    <title>Bojan Zdelar</title>
+    <title>Bojan Zdelar | Olympic Kayaker</title>
   </head>
-
   <body id="page-top">
-    <!-- Header -->
-    <header>
-      <!-- Navigation bar -->
-      <nav class="navbar navbar-expand-md navbar-light bg-light text-uppercase">
-        <div class="container">
-          <h1 class="navbar-brand fs-4 mb-0">Bojan Zdelar</h1>
-
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a class="brand-link" href="#page-top" aria-label="Bojan Zdelar home"
+          ><img
+            class="brand-mark"
+            src="assets/zdelar-wordmark.svg"
+            alt=""
+            aria-hidden="true"
+        /></a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span></span><span></span>
+        </button>
+        <div class="nav-links" id="main-nav">
+          <a href="#about">About</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#supporters">Partners</a>
+          <a class="nav-contact" href="#contact"
+            >Get in touch <span aria-hidden="true">↗</span></a
           >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link fs-5 py-3 py-md-2 px-lg-3" href="#about">
-                  About
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link fs-5 py-3 py-md-2 px-lg-3"
-                  href="#achievements"
-                >
-                  Achievements
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 py-3 py-md-2 px-lg-3" href="#contact">
-                  Contact
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link fs-5 py-3 py-md-2 px-lg-3"
-                  href="#supporters"
-                >
-                  Supporters
-                </a>
-              </li>
-            </ul>
-
-            <hr />
-
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a
-                  class="nav-link py-3 py-md-2"
-                  href="https://www.instagram.com/bojanzdelar/"
-                  target="blank"
-                >
-                  <img
-                    src="https://img.icons8.com/metro/26/000000/instagram-new.png"
-                  />
-                  <span class="d-md-none ms-1">Instagram</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link py-3 py-md-2"
-                  href="https://en.wikipedia.org/wiki/Bojan_Zdelar"
-                  target="blank"
-                >
-                  <img
-                    src="https://img.icons8.com/metro/26/000000/wikipedia.png"
-                  />
-                  <span class="d-md-none ms-1">Wikipedia</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link py-3 py-md-2"
-                  href="https://www.github.com/BojanZdelar"
-                  target="blank"
-                >
-                  <img
-                    src="https://img.icons8.com/metro/26/000000/github.png"
-                  />
-                  <span class="d-md-none ms-1">GitHub</span>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </nav>
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="assets/racing.jpg"
+          alt="Bojan Zdelar racing in his kayak for Serbia"
+          fetchpriority="high"
+        />
+        <div class="hero-background" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span>SERBIAN KAYAK SPRINT OLYMPIC
+            ATHLETE
+          </p>
+          <h1 id="hero-title">BOJAN<br /><span>ZDELAR</span></h1>
+          <p class="hero-copy">
+            Serbian sprint kayaker specializing in the K1 500m and 1000m. World
+            and European U23 champion and Tokyo 2020 Olympian.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#achievements"
+              >View race results <span aria-hidden="true">↘</span></a
+            >
+            <a class="text-link" href="#about"
+              >About me <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </div>
+      </section>
     </header>
 
-    <!-- About section -->
-    <section class="bg-light text-dark py-5" id="about">
-      <div class="container">
-        <h3 class="text-center text-uppercase">About</h3>
-        <hr class="my-4" />
-        <h2 class="fw-normal fs-4 mb-4">Canoe sprint athlete from Serbia</h2>
-        <p class="fs-5">
-          I started paddling when I was twelve years old. At fifteen years of
-          age, I have made my debut for Serbia's national team. Since then, I
-          have won many international medals at Olympic Hopes and European and
-          World Championships for Juniors and U23. While competing in the senior
-          category, I have qualified to finals at World Championships, European
-          Championships, and World Cups. I have been honored to be a part of the
-          Serbian Olympic team at the Olympic Games in Tokyo 2020. Outside of
-          paddling, I love programming and I hold a Bachelor's degree in
-          Software Engineering.
-        </p>
-      </div>
-    </section>
-
-    <!-- Achievements section -->
-    <section class="bg-secondary text-dark py-5" id="achievements">
-      <div class="container">
-        <h3 class="text-center text-uppercase">Achievements</h3>
-        <hr class="my-4" />
-
-        <!-- Content generated by function displayAchievements -->
-        <div class="row" id="achievements-content" actpage="1"></div>
-
-        <!-- Achievements paging -->
-        <nav aria-label="Achievements paging">
-          <ul class="pagination pagination-lg justify-content-center mt-3">
-            <li class="page-item" id="page-prev">
-              <a
-                class="page-link text-dark"
-                href="#achievements"
-                aria-label="Previous"
+    <main>
+      <section class="intro section-pad" id="about">
+        <div class="section-kicker">THE ATHLETE</div>
+        <div class="intro-layout">
+          <div class="intro-main">
+            <h2 class="section-heading">
+              A life measured<br />in <span>seconds.</span>
+            </h2>
+            <div class="intro-copy">
+              <p class="lead">
+                I’m a Serbian kayak sprint athlete competing at the highest
+                level of international sport.
+              </p>
+              <p>
+                I started paddling at twelve and joined Serbia’s national team
+                at fifteen. Since then, I’ve progressed from junior and U23
+                racing to the senior international stage, becoming World and
+                European U23 champion and reaching the finals of major senior K1
+                competitions. In 2021, I represented Serbia at the Tokyo 2020
+                Olympic Games, one of the defining milestones of my career.
+              </p>
+              <p>
+                My focus now is on taking the next step at senior level and
+                challenging for medals at the biggest international
+                competitions. I’m working to become faster, stronger, and more
+                consistent in the K1 500m and 1000m, with the ambition of
+                competing among the best in the world.
+              </p>
+              <a class="underlined-link" href="#contact"
+                >Connect with me <span aria-hidden="true">↗</span></a
               >
-                Previous
-              </a>
-            </li>
-            <li class="btn-outline-dark" id="page-next">
-              <a
-                class="page-link text-dark"
-                href="#achievements"
-                aria-label="Next"
-              >
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </section>
-
-    <!-- Contact section -->
-    <section class="bg-light text-dark py-5" id="contact">
-      <div class="container">
-        <h3 class="text-center text-uppercase">Contact</h3>
-        <hr class="my-4" />
-        <div class="row">
-          <form class="col-lg-8 mx-auto needs-validation" novalidate>
-            <div class="py-2">
-              <label for="name" class="col-form-label-lg">Name</label>
-              <br />
-              <input
-                class="form-control form-control-lg"
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Enter your name"
-                required
-              />
-              <div class="valid-feedback">Looks good!</div>
-              <div class="invalid-feedback">Please enter your name.</div>
             </div>
-            <div class="py-2">
-              <label for="email" class="col-form-label-lg">Email Adress</label>
-              <br />
-              <input
-                class="form-control form-control-lg"
-                type="text"
-                name="email"
-                id="email"
-                placeholder="Enter your email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                required
-              />
-              <div class="valid-feedback">Looks good!</div>
-              <div class="invalid-feedback">
-                Please enter your email adress in valid format.
+          </div>
+          <figure class="about-photo">
+            <img
+              src="assets/medal-ceremony.jpg"
+              alt="Bojan Zdelar holding his medal and flowers after a championship race"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="achievements section-pad" id="achievements">
+        <div class="section-kicker">ON THE WATER</div>
+        <div class="section-title-row">
+          <div>
+            <h2 class="section-heading">
+              Results that<br /><span>speak.</span>
+            </h2>
+          </div>
+          <p class="section-description">
+            Every race leaves a lesson. A selection of championship and
+            international results from across my career.
+          </p>
+        </div>
+        <div class="record-highlights">
+          <div class="record-stats" aria-label="Career milestones">
+            <article class="record-stat">
+              <span class="record-stat-label">OLYMPIC GAMES</span>
+              <strong>1<span>×</span></strong>
+              <p>Tokyo 2020</p>
+            </article>
+            <article class="record-stat">
+              <span class="record-stat-label">WORLD &amp; EUROPEAN MEDALS</span>
+              <strong>11<span>×</span></strong>
+              <p>International championship medals</p>
+            </article>
+            <article class="record-stat">
+              <span class="record-stat-label">RACE EXPERIENCE</span>
+              <strong>150<span>+</span></strong>
+              <p>International race starts</p>
+            </article>
+          </div>
+          <div class="record-feature-grid">
+            <article
+              class="champion-card"
+              aria-label="Olympian and World and European U23 champion"
+            >
+              <h3 class="champion-title">
+                WORLD &amp; EUROPEAN
+                <span>CHAMPION.</span>
+              </h3>
+              <span class="champion-mark" aria-hidden="true">U23</span>
+            </article>
+            <section
+              class="personal-bests-card"
+              aria-label="Personal best times"
+            >
+              <div class="personal-best-header">
+                <h3>Personal bests</h3>
+              </div>
+              <div class="personal-best-row">
+                <div>
+                  <span class="best-distance">K1 · 500M</span>
+                  <strong>1:37.580</strong>
+                </div>
+                <span class="best-arrow" aria-hidden="true">↗</span>
+              </div>
+              <div class="personal-best-row">
+                <div>
+                  <span class="best-distance">K1 · 1000M</span>
+                  <strong>3:28.015</strong>
+                </div>
+                <span class="best-arrow" aria-hidden="true">↗</span>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="achievement-toolbar">
+          <span class="results-label"
+            ><span class="status-dot"></span> INTERNATIONAL RESULTS</span
+          >
+          <span class="results-count" id="results-count">CAREER ARCHIVE</span>
+        </div>
+        <div
+          class="achievement-grid"
+          id="achievements-content"
+          actpage="1"
+          aria-live="polite"
+        >
+          <p class="archive-status">Loading international results…</p>
+        </div>
+        <nav class="pagination-wrap" aria-label="Achievements pages">
+          <button
+            class="page-control"
+            id="page-prev"
+            type="button"
+            aria-label="Previous achievements"
+          >
+            ← <span>Previous</span>
+          </button>
+          <span class="page-indicator" id="page-indicator">Page 1 of 6</span>
+          <button
+            class="page-control"
+            id="page-next"
+            type="button"
+            aria-label="Next achievements"
+          >
+            <span>Next</span> →
+          </button>
+        </nav>
+      </section>
+
+      <section class="statement">
+        <div class="statement-inner">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE MINDSET</p>
+          <blockquote>
+            “Small margins.<br />Relentless work.<br />One more stroke.”
+          </blockquote>
+          <span class="statement-caption">THE PURSUIT NEVER STOPS.</span>
+        </div>
+        <div class="statement-number" aria-hidden="true">zdelar</div>
+      </section>
+
+      <section class="partners section-pad" id="supporters">
+        <div class="section-kicker">THE TEAM BEHIND THE WORK</div>
+        <div class="partners-heading">
+          <h2 class="section-heading">Better <span>together.</span></h2>
+          <p class="section-description">
+            Grateful to the partners who support the pursuit of performance.
+          </p>
+        </div>
+        <div class="partner-logos">
+          <a
+            href="https://www.nelo.eu"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Nelo Kayaks website"
+            ><img
+              src="assets/supporters/nelo.png"
+              alt="Nelo Kayaks"
+              loading="lazy"
+              decoding="async"
+          /></a>
+          <a
+            href="https://paddles.braca-sport.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Braca-Sport website"
+            ><img
+              src="assets/supporters/braca.png"
+              alt="Braca-Sport"
+              loading="lazy"
+              decoding="async"
+          /></a>
+        </div>
+      </section>
+
+      <section class="contact section-pad" id="contact">
+        <div class="section-kicker">START A CONVERSATION</div>
+        <div class="contact-layout">
+          <div class="contact-intro">
+            <h2 class="section-heading">
+              Let’s make<br />something <span>happen.</span>
+            </h2>
+            <p>
+              For partnerships, media, or just to say hello, send a message.
+            </p>
+            <a class="contact-email" href="mailto:bojan@zdelar.com"
+              >bojan@zdelar.com <span aria-hidden="true">↗</span></a
+            >
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/bojanzdelar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Instagram <span>↗</span></a
+              >
+              <a
+                href="https://en.wikipedia.org/wiki/Bojan_Zdelar"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Wikipedia <span>↗</span></a
+              >
+            </div>
+          </div>
+          <form class="contact-form needs-validation" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="name">YOUR NAME</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Name"
+                  autocomplete="name"
+                  required
+                />
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+              <div class="field">
+                <label for="email">EMAIL ADDRESS</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
               </div>
             </div>
-            <div class="py-2">
-              <label for="message" class="col-form-label-lg">Message</label>
-              <br />
+            <div class="field">
+              <label for="message">MESSAGE</label>
               <textarea
-                class="form-control form-control-lg"
                 name="message"
                 id="message"
-                placeholder="Your message here..."
+                placeholder="What's on your mind?"
                 rows="4"
                 required
               ></textarea>
-              <div class="valid-feedback">Looks good!</div>
-              <div class="invalid-feedback">Please enter your message.</div>
+              <div class="invalid-feedback">Please enter a message.</div>
             </div>
-
-            <div class="pt-4 text-end">
-              <button
-                type="submit"
-                class="btn btn-outline-dark btn-lg"
-                id="sendMessage"
-              >
-                Send the message
-              </button>
-            </div>
+            <button
+              class="button button-primary submit-button"
+              type="submit"
+              id="sendMessage"
+            >
+              Send message <span aria-hidden="true">↗</span>
+            </button>
+            <p class="form-note">
+              Your message will be sent directly to my inbox.
+            </p>
           </form>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Supporters section -->
-    <section class="bg-secondary text-dark py-5" id="supporters">
-      <div class="container">
-        <h3 class="text-center text-uppercase">Supporters</h3>
-        <hr class="my-4" />
-        <div class="row justify-content-center">
-          <div
-            class="col-6 col-md-4 col-xl-3 d-flex align-items-center mb-3 mb-md-0"
-          >
-            <a href="https://www.nelo.eu" target="blank">
-              <img
-                class="img-fluid mx-auto d-block"
-                src="assets/supporters/nelo.png"
-                alt="Nelo Kayaks"
-              />
-            </a>
-          </div>
-          <div class="col-6 col-md-4 col-xl-3 d-flex align-items-center">
-            <a href="https://paddles.braca-sport.com" target="blank">
-              <img
-                class="img-fluid mx-auto d-block"
-                src="assets/supporters/braca.png"
-                alt="Braca-Sport"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Copyright section -->
-    <section class="py-4 text-center text-dark bg-light">
-      <div class="container">
-        <p>Copyright © Bojan Zdelar <span id="year"></span></p>
-      </div>
-    </section>
+    <footer class="site-footer">
+      <a
+        class="brand-link footer-brand-link"
+        href="#page-top"
+        aria-label="Bojan Zdelar home"
+        ><img
+          class="brand-mark"
+          src="assets/zdelar-wordmark.svg"
+          alt=""
+          aria-hidden="true"
+      /></a>
+      <span>© <span id="year"></span> BOJAN ZDELAR</span>
+    </footer>
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      navToggle.addEventListener("click", () => {
+        const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!isOpen));
+        navLinks.classList.toggle("is-open", !isOpen);
+        document.body.classList.toggle("nav-open", !isOpen);
+      });
+      navLinks.querySelectorAll("a").forEach((link) =>
+        link.addEventListener("click", () => {
+          navToggle.setAttribute("aria-expanded", "false");
+          navLinks.classList.remove("is-open");
+          document.body.classList.remove("nav-open");
+        }),
+      );
+    </script>
   </body>
 </html>
