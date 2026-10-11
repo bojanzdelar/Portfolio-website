@@ -1087,3 +1087,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .contact-intro > p { font-size: 14px; }
 }
 
+/* Align footer wordmark and copyright on mobile. */
+@media (max-width: 650px) {
+  .site-footer {
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+  .footer-brand-link {
+    flex: 0 0 132px;
+  }
+  .site-footer > span {
+    margin-left: auto;
+    align-self: center;
+    text-align: right;
+    line-height: 1.4;
+    font-size: clamp(8px, 2.5vw, 10px);
+  }
+}
