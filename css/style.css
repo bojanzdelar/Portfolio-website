@@ -1251,3 +1251,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .page-control .arrow-icon {
   filter: brightness(0) invert(1);
 }
+
+
+/* Slightly enlarge directional arrows across the site, preserving personal-best arrows. */
+.arrow-icon:not(.best-arrow) {
+  width: 18px;
+  height: 18px;
+  flex-basis: 18px;
+}
+.external-link-arrow {
+  width: 16px;
+  height: 16px;
+  flex-basis: 16px;
+}
+.contact-email .external-link-arrow {
+  width: 17px;
+  height: 17px;
+  flex-basis: 17px;
+}
