@@ -1105,3 +1105,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
     font-size: clamp(8px, 2.5vw, 10px);
   }
 }
+
+/* Slightly reduce the personal-best time typography. */
+.personal-best-row strong {
+  font-size: clamp(27px, 3vw, 36px);
+}
+
+@media (max-width: 650px) {
+  .personal-best-row strong {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+}
