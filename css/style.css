@@ -1151,3 +1151,80 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .contact-email .external-link-arrow { width: 14px; height: 14px; flex-basis: 14px; }
 .social-links a { display: inline-flex; align-items: center; }
+
+
+/* CSS-drawn directional arrows throughout the page (no Unicode glyphs). */
+.arrow-icon {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  vertical-align: middle;
+  color: var(--accent);
+}
+.arrow-icon::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 1.5px;
+  background: currentColor;
+}
+.arrow-icon::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-color: currentColor;
+  border-style: solid;
+}
+.arrow-up-right::before {
+  top: 7px;
+  left: 1px;
+  transform: rotate(-45deg);
+}
+.arrow-up-right::after {
+  top: 1px;
+  right: 1px;
+  border-width: 1.5px 1.5px 0 0;
+}
+.arrow-down-right::before {
+  top: 6px;
+  left: 1px;
+  transform: rotate(45deg);
+}
+.arrow-down-right::after {
+  right: 1px;
+  bottom: 1px;
+  border-width: 0 1.5px 1.5px 0;
+}
+.arrow-right::before {
+  top: 6px;
+  left: 1px;
+}
+.arrow-right::after {
+  top: 3px;
+  right: 1px;
+  border-width: 1.5px 1.5px 0 0;
+  transform: rotate(45deg);
+}
+.arrow-left::before {
+  top: 6px;
+  right: 1px;
+}
+.arrow-left::after {
+  top: 3px;
+  left: 1px;
+  border-width: 0 0 1.5px 1.5px;
+  transform: rotate(45deg);
+}
+.nav-contact .arrow-icon,
+.button-primary .arrow-icon,
+.text-link .arrow-icon,
+.underlined-link .arrow-icon { color: var(--accent); }
+.nav-contact:hover .arrow-icon,
+.button-primary .arrow-icon { color: currentColor; }
+.contact-email .arrow-icon { width: 14px; height: 14px; flex-basis: 14px; }
+.social-links a { display: inline-flex; align-items: center; gap: 7px; }
+.personal-best-row .best-arrow { width: 22px; height: 22px; flex-basis: 22px; }
+.page-control .arrow-icon { color: currentColor; }
