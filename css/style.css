@@ -1228,3 +1228,41 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .social-links a { display: inline-flex; align-items: center; gap: 7px; }
 .personal-best-row .best-arrow { width: 22px; height: 22px; flex-basis: 22px; }
 .page-control .arrow-icon { color: currentColor; }
+
+
+/* Use local SVG masks for crisp, reliable arrows on older browsers. */
+.arrow-icon,
+.external-link-arrow {
+  display: inline-block;
+  flex: 0 0 auto;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+.arrow-icon::before,
+.arrow-icon::after,
+.external-link-arrow::before,
+.external-link-arrow::after {
+  content: none;
+}
+.arrow-up-right,
+.external-link-arrow {
+  -webkit-mask-image: url("../assets/arrows/arrow-up-right.svg");
+  mask-image: url("../assets/arrows/arrow-up-right.svg");
+}
+.arrow-down-right {
+  -webkit-mask-image: url("../assets/arrows/arrow-down-right.svg");
+  mask-image: url("../assets/arrows/arrow-down-right.svg");
+}
+.arrow-right {
+  -webkit-mask-image: url("../assets/arrows/arrow-right.svg");
+  mask-image: url("../assets/arrows/arrow-right.svg");
+}
+.arrow-left {
+  -webkit-mask-image: url("../assets/arrows/arrow-left.svg");
+  mask-image: url("../assets/arrows/arrow-left.svg");
+}
