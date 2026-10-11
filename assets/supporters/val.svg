@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 116" role="img" aria-labelledby="title">
-  <title id="title">Kajak klub Val wordmark</title>
-  <g fill="#17283B">
-    <text x="8" y="69" font-family="Arial, Helvetica, sans-serif" font-size="69" font-weight="800" font-style="italic" letter-spacing="-4">VAL</text>
-    <text x="13" y="96" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="5">KAJAK KLUB</text>
-  </g>
-  <path d="M216 82 C242 72 268 72 291 82 C314 92 338 92 362 82" fill="none" stroke="#E63946" stroke-width="4" stroke-linecap="round"/>
-  <path d="M226 94 C248 87 269 87 288 94 C307 101 329 101 349 94" fill="none" stroke="#17283B" stroke-width="2.5" stroke-linecap="round" opacity=".75"/>
-</svg>
