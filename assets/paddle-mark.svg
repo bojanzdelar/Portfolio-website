@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" role="img" aria-labelledby="title">
   <title id="title">Bojan Zdelar kayak sprint mark</title>
   <path d="M7.5 47.5C14.2 45 23.4 52.1 28 59.2 23.1 65.4 14.2 65 9.5 59.2 7.3 56.4 6.6 51.4 7.5 47.5Z" fill="#E63946"/>
-  <path d="M52 20.8C56.9 14.6 65.8 15 70.5 20.8 72.7 23.6 73.4 28.6 72.5 32.5 65.8 35 56.6 27.9 52 20.8Z" fill="#E63946" transform="translate(0 -5)"/>
+  <path d="M52 15.8C56.9 9.6 65.8 10 70.5 15.8 72.7 18.6 73.4 23.6 72.5 27.5 65.8 30 56.6 22.9 52 15.8Z" fill="#E63946"/>
   <path d="M17 63 63 17" stroke="#F3F4F1" stroke-width="4.5" stroke-linecap="round"/>
-  <path d="M12 37.5c3.6.6 6.9 2.5 9.3 5.4M58.7 37.1c2.9-2.4 6.2-3.8 9.9-4.1" stroke="#E63946" stroke-width="3" stroke-linecap="round" opacity=".9"/>
 </svg>
