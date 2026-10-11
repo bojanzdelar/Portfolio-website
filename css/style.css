@@ -741,3 +741,33 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .footer-wordmark .wordmark-name { font-size: 12px; }
   .champion-card .feature-eyebrow { font-size: 15px; }
 }
+
+/* Standalone canoe sprint logo mark for header and footer. */
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  gap: 0;
+  flex: 0 0 auto;
+  transition: opacity .2s, transform .2s;
+}
+.brand-link:hover {
+  opacity: .86;
+  transform: translateY(-1px);
+}
+.brand-mark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.footer-brand-link {
+  width: 39px;
+  height: 39px;
+}
+@media (max-width: 650px) {
+  .brand-link { width: 43px; height: 43px; }
+  .footer-brand-link { width: 36px; height: 36px; }
+}
