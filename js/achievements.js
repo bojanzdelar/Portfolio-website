@@ -24,16 +24,7 @@ const getAchievements = async () => {
   return data;
 };
 
-const getEventType = (achievement) => {
-  const title = achievement.title || "";
-  if (/Olympic Games/i.test(title)) return "Olympic Games";
-  if (/Olympic Qualifier/i.test(title)) return "Olympic qualification";
-  if (/World Championships/i.test(title)) return "World Championships";
-  if (/European Championships/i.test(title)) return "European Championships";
-  if (/World Cup/i.test(title)) return "World Cup";
-  if (/Olympic Hopes/i.test(title)) return "Olympic Hopes";
-  return "International racing";
-};
+const getCompetitionLocation = (achievement) => achievement.location || "Location unavailable";
 
 const renderAchievement = (achievement) => {
   const article = document.createElement("article");
@@ -59,8 +50,8 @@ const renderAchievement = (achievement) => {
   info.className = "achievement-info";
 
   const tag = document.createElement("span");
-  tag.className = "achievement-tag";
-  tag.textContent = getEventType(achievement);
+  tag.className = "achievement-location";
+  tag.textContent = getCompetitionLocation(achievement);
 
   const title = document.createElement("h3");
   title.textContent = achievement.title || "International competition";
