@@ -682,3 +682,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 650px) {
   .partner-logos a { min-height: 122px; padding: 20px 15px; }
 }
+
+/* Further zoom out the hero race image while keeping the right-shifted focal point. */
+.hero-image { transform: scale(.94) translateX(4%); }
+@media (max-width: 900px) {
+  .hero-image { transform: scale(.96) translateX(3%); }
+}
+@media (max-width: 650px) {
+  .hero-image { transform: scale(.98) translateX(1%); }
+}
+.achievement-location {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
