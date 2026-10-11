@@ -33,7 +33,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .nav-contact:hover span { color: var(--ink); }
 .nav-toggle { display: none; }
 .hero { position: relative; isolation: isolate; min-height: min(790px, calc(100vh - 88px)); overflow: hidden; display: flex; align-items: center; }
-.hero-background { position: absolute; z-index: -3; inset: 0; background-image: linear-gradient(90deg, rgba(8,13,20,.98) 0%, rgba(8,13,20,.88) 34%, rgba(8,13,20,.42) 66%, rgba(8,13,20,.13) 100%), linear-gradient(0deg, rgba(8,13,20,.75), transparent 45%), url("/assets/racing.jpg"); background-size: cover; background-position: center 38%; transform: scale(1.01); }
+.hero-image { position: absolute; z-index: -3; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 38%; transform: scale(1.01); }
+.hero-background { position: absolute; z-index: -2; inset: 0; background-image: linear-gradient(90deg, rgba(8,13,20,.98) 0%, rgba(8,13,20,.88) 34%, rgba(8,13,20,.42) 66%, rgba(8,13,20,.13) 100%), linear-gradient(0deg, rgba(8,13,20,.75), transparent 45%); }
 .hero-grain { position: absolute; z-index: -2; inset: 0; pointer-events: none; opacity: .12; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E"); }
 .hero-inner { width: min(1280px, calc(100% - 72px)); margin: 0 auto; padding: 88px 0 76px; position: relative; }
 .eyebrow { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 10px; letter-spacing: .18em; font-weight: 700; color: #c5cbd3; }
@@ -151,7 +152,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 900px) {
   .nav-shell, .hero-inner { width: calc(100% - 48px); }
   .hero { min-height: 700px; }
-  .hero-background { background-position: 58% center; background-image: linear-gradient(90deg, rgba(8,13,20,.97), rgba(8,13,20,.74) 60%, rgba(8,13,20,.4)), linear-gradient(0deg, rgba(8,13,20,.75), transparent 50%), url("/assets/racing.jpg"); }
+  .hero-background { background-position: 58% center; background-image: linear-gradient(90deg, rgba(8,13,20,.97), rgba(8,13,20,.74) 60%, rgba(8,13,20,.4)), linear-gradient(0deg, rgba(8,13,20,.75), transparent 50%); }
   .section-pad { padding: 90px 24px; }
   .intro-layout { gap: 6%; }
   .achievement-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -175,7 +176,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .nav-contact { margin-top: 15px; text-align: center; }
   .hero { min-height: 680px; min-height: calc(100svh - 72px); }
   .hero-inner { width: calc(100% - 36px); padding: 70px 0 30px; }
-  .hero-background { background-position: 60% center; background-image: linear-gradient(90deg, rgba(8,13,20,.94), rgba(8,13,20,.75) 68%, rgba(8,13,20,.51)), linear-gradient(0deg, rgba(8,13,20,.8), transparent 55%), url("/assets/racing.jpg"); }
+  .hero-background { background-position: 60% center; background-image: linear-gradient(90deg, rgba(8,13,20,.94), rgba(8,13,20,.75) 68%, rgba(8,13,20,.51)), linear-gradient(0deg, rgba(8,13,20,.8), transparent 55%); }
   .hero h1 { font-size: clamp(62px, 16.5vw, 90px); margin: 25px 0 20px; }
   .hero-copy { max-width: 360px; font-size: 13px; line-height: 1.8; }
   .hero-actions { flex-wrap: wrap; gap: 21px; margin-top: 28px; }
@@ -285,4 +286,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .about-photo { width: min(100%, 440px); margin-inline: auto; }
   .about-photo img { min-height: 0; height: auto; max-height: none; object-fit: contain; }
   .about-photo figcaption { padding: 11px 12px; font-size: 7px; }
+}
+
+/* Keep the racing photograph as a real HTML image, with CSS used only for framing and overlays. */
+.hero-background { background-size: cover; background-position: center; }
+@media (max-width: 900px) {
+  .hero-image { object-position: 58% center; }
+}
+@media (max-width: 650px) {
+  .hero-image { object-position: 60% center; }
 }
