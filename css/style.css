@@ -314,3 +314,76 @@ button, a { -webkit-tap-highlight-color: transparent; }
     transform: scale(1.04) translateX(0);
   }
 }
+
+/* More breathing room around the athlete in the hero image. */
+.hero-image {
+  transform: scale(1.02) translateX(2%);
+}
+@media (max-width: 900px) {
+  .hero-image { transform: scale(1.02) translateX(2%); }
+}
+@media (max-width: 650px) {
+  .hero-image { transform: scale(1.0) translateX(0); }
+}
+
+/* Career highlights: titles and personal bests are the main proof points. */
+.champion-highlight {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding: 18px 22px;
+  color: var(--ink);
+  background: var(--accent);
+}
+.champion-label {
+  font: 700 10px/1.5 var(--font-body);
+  letter-spacing: .15em;
+}
+.champion-highlight strong {
+  font: 800 clamp(21px, 3.2vw, 34px)/1.15 var(--font-display);
+  letter-spacing: -.05em;
+}
+.personal-bests {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 0;
+  margin-top: 14px;
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+}
+.personal-best-heading {
+  padding: 20px 18px 20px 0;
+  font: 700 9px/1.5 var(--font-body);
+  letter-spacing: .15em;
+  color: #697482;
+}
+.personal-best {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 24px;
+  border-left: 1px solid var(--line-dark);
+}
+.personal-best span {
+  color: #697482;
+  font: 700 9px/1.5 var(--font-body);
+  letter-spacing: .14em;
+}
+.personal-best strong {
+  color: var(--ink);
+  font: 800 clamp(25px, 3vw, 38px)/1 var(--font-display);
+  letter-spacing: -.055em;
+  font-variant-numeric: tabular-nums;
+}
+.page-indicator { letter-spacing: 0; font-size: 11px; }
+@media (max-width: 650px) {
+  .champion-highlight { align-items: flex-start; flex-direction: column; gap: 5px; padding: 17px; }
+  .personal-bests { grid-template-columns: 1fr 1fr; }
+  .personal-best-heading { grid-column: 1 / -1; padding: 15px 0 9px; }
+  .personal-best { padding: 16px 12px 18px 0; }
+  .personal-best + .personal-best { padding-left: 14px; }
+  .personal-best strong { font-size: clamp(24px, 7vw, 34px); }
+}
