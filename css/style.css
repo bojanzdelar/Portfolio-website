@@ -387,3 +387,95 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .personal-best + .personal-best { padding-left: 14px; }
   .personal-best strong { font-size: clamp(24px, 7vw, 34px); }
 }
+
+/* On the record: put honours and personal bests together as the main performance story. */
+.record-highlights { margin: 0 0 44px; }
+.achievements .stats-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0;
+  border-color: var(--line);
+}
+.achievements .stat { padding: 22px 18px 24px 0; }
+.achievements .stat + .stat { border-left-color: var(--line); padding-left: 22px; }
+.achievements .stat strong { color: var(--white); font-size: clamp(36px, 4vw, 52px); }
+.achievements .stat span:not(.stat-plus) { color: #bac3cd; font-size: 14px; line-height: 1.5; }
+.achievements .stat-plus { color: #bac3cd; }
+.achievements .champion-highlight {
+  color: var(--ink); background: var(--accent); padding: 23px 26px;
+  margin-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.achievements .champion-label { font-size: 12px; line-height: 1.5; letter-spacing: .14em; }
+.achievements .champion-highlight strong { font-size: clamp(24px, 3.8vw, 44px); }
+.achievements .personal-bests {
+  display: grid; grid-template-columns: minmax(130px, .7fr) repeat(2, minmax(0, 1fr));
+  margin-top: 16px; border-color: var(--line);
+}
+.achievements .personal-best-heading { color: #c5ccd5; font-size: 12px; padding: 23px 16px 23px 0; }
+.achievements .personal-best { border-left-color: var(--line); padding: 20px 22px; }
+.achievements .personal-best span { color: #b1bac5; font-size: 12px; }
+.achievements .personal-best strong {
+  color: var(--white); font-size: clamp(29px, 3.7vw, 44px);
+}
+.achievement-toolbar { font-size: 11px; }
+.results-count { font-size: 12px; }
+.achievement-info h3 { font-size: 18px; }
+.achievement-info p { font-size: 14px; line-height: 1.65; }
+.achievement-tag { font-size: 11px; }
+.page-control { font-size: 14px; }
+.page-indicator { font-size: 13px; }
+.partner-logos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 920px; margin-inline: auto;
+}
+
+/* Supporting UI/body type is larger; display heading sizes remain untouched. */
+.nav-links > a:not(.nav-contact), .nav-contact { font-size: 14px; }
+.eyebrow { font-size: 11px; }
+.hero-copy { font-size: 17px; }
+.hero-bottomline { font-size: 11px; }
+.hero-side-label { font-size: 10px; }
+.section-kicker { font-size: 12px; }
+.intro-copy p { font-size: 16px; line-height: 1.85; }
+.intro-copy .lead { font-size: 22px; }
+.underlined-link { font-size: 14px; }
+.section-description { font-size: 15px; }
+.statement-caption { font-size: 11px; }
+.contact-intro > p { font-size: 15px; }
+.social-links a { font-size: 13px; }
+.field label { font-size: 11px; }
+.field input, .field textarea { font-size: 15px; }
+.invalid-feedback { font-size: 13px; }
+.form-note { font-size: 12px; }
+.site-footer > span { font-size: 11px; }
+.footer-wordmark .wordmark-name { font-size: 11px; }
+.footer-wordmark .wordmark-name span { font-size: 9px; }
+.about-photo figcaption { font-size: 10px; }
+@media (max-width: 900px) {
+  .achievements .stat { padding-right: 12px; }
+  .achievements .stat + .stat { padding-left: 16px; }
+  .achievements .personal-best { padding-inline: 15px; }
+}
+@media (max-width: 650px) {
+  .record-highlights { margin-bottom: 34px; }
+  .achievements .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .achievements .stat { padding: 18px 8px 19px 0; }
+  .achievements .stat + .stat { padding-left: 15px; }
+  .achievements .stat:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+  .achievements .champion-highlight { align-items: flex-start; flex-direction: column; padding: 20px; }
+  .achievements .personal-bests { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .achievements .personal-best-heading { grid-column: 1 / -1; padding: 15px 0 8px; }
+  .achievements .personal-best { padding: 15px 10px 18px 0; }
+  .achievements .personal-best + .personal-best { padding-left: 14px; }
+  .achievements .personal-best span { font-size: 11px; }
+  .achievements .personal-best strong { font-size: clamp(26px, 7.4vw, 36px); }
+  .hero-copy { font-size: 15px; }
+  .intro-copy p { font-size: 15px; }
+  .intro-copy .lead { font-size: 19px; }
+  .section-kicker { font-size: 11px; }
+  .section-description { font-size: 14px; }
+  .achievement-info h3 { font-size: 18px; }
+  .achievement-info p { font-size: 14px; }
+  .partner-logos a { min-height: 122px; padding: 20px 15px; }
+  .partner-logos img { max-height: 58px; }
+  .site-footer > span { font-size: 10px; }
+}
