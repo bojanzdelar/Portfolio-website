@@ -1039,14 +1039,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 
-/* Use the standalone red Z in the footer, while keeping the full wordmark in the header. */
+/* Full wordmark in both header and footer; the standalone Z is reserved for the favicon. */
 .footer-brand-link {
-  width: 58px;
-  height: 28px;
+  width: 154px;
+  height: 34px;
 }
 @media (max-width: 650px) {
   .footer-brand-link {
-    width: 52px;
-    height: 25px;
+    width: 132px;
+    height: 30px;
   }
 }
