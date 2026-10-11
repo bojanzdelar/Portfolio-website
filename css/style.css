@@ -479,3 +479,192 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .partner-logos img { max-height: 58px; }
   .site-footer > span { font-size: 10px; }
 }
+
+/* Rebuilt On the Record into a deliberate hierarchy: milestones, title, personal bests, archive. */
+.record-highlights {
+  display: grid;
+  gap: 18px;
+  margin: 0 0 48px;
+}
+.achievements .record-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid rgba(255,255,255,.13);
+  background: #101722;
+}
+.achievements .record-stat {
+  min-width: 0;
+  padding: 22px 24px 24px;
+}
+.achievements .record-stat + .record-stat {
+  border-left: 1px solid rgba(255,255,255,.13);
+}
+.record-stat-label {
+  display: block;
+  min-height: 32px;
+  color: #acb5c0;
+  font: 700 11px/1.5 var(--font-body);
+  letter-spacing: .12em;
+}
+.record-stat strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--white);
+  font: 800 clamp(38px, 4.5vw, 54px)/1 var(--font-display);
+  letter-spacing: -.065em;
+  font-variant-numeric: tabular-nums;
+}
+.record-stat strong span { color: var(--accent); }
+.record-stat p {
+  margin: 9px 0 0;
+  color: #b5bec8;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.record-feature-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.champion-card {
+  min-height: 260px;
+  padding: clamp(24px, 3vw, 38px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+  overflow: hidden;
+  background: var(--accent);
+  color: var(--ink);
+}
+.feature-eyebrow {
+  display: block;
+  color: inherit;
+  font: 800 11px/1.5 var(--font-body);
+  letter-spacing: .16em;
+}
+.champion-card h3 {
+  margin: 0;
+  max-width: 100%;
+  font: 800 clamp(38px, 4.5vw, 58px)/.92 var(--font-display);
+  letter-spacing: -.075em;
+  position: relative;
+  z-index: 1;
+}
+.champion-card h3 span { display: block; color: var(--white); }
+.champion-card p {
+  margin: 0;
+  max-width: 250px;
+  font-size: 14px;
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
+}
+.champion-mark {
+  position: absolute;
+  right: -14px;
+  bottom: -54px;
+  color: rgba(11,16,24,.08);
+  font: 800 190px/1 var(--font-display);
+  letter-spacing: -.13em;
+}
+.personal-bests-card {
+  display: flex;
+  flex-direction: column;
+  background: #101722;
+  border: 1px solid rgba(255,255,255,.13);
+  min-width: 0;
+}
+.personal-best-header {
+  padding: 23px 25px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+}
+.personal-best-header .feature-eyebrow { color: var(--accent); }
+.personal-best-header h3 {
+  margin: 9px 0 0;
+  color: var(--white);
+  font: 700 23px/1.2 var(--font-display);
+  letter-spacing: -.04em;
+}
+.personal-best-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 23px 25px;
+  flex: 1;
+}
+.personal-best-row + .personal-best-row {
+  border-top: 1px solid rgba(255,255,255,.13);
+}
+.personal-best-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.best-distance {
+  color: #b2bbc5;
+  font: 700 11px/1.5 var(--font-body);
+  letter-spacing: .13em;
+}
+.personal-best-row strong {
+  color: var(--white);
+  font: 800 clamp(31px, 3.6vw, 43px)/1 var(--font-display);
+  letter-spacing: -.055em;
+  font-variant-numeric: tabular-nums;
+}
+.best-arrow {
+  color: var(--accent);
+  font-size: 22px;
+}
+.achievement-toolbar {
+  margin-top: 2px;
+  padding-top: 21px;
+}
+.archive-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 28px 0;
+  color: #c0c7d0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.archive-error { color: #ffb9bd; }
+.achievement-image-wrap.image-unavailable::after {
+  content: "PHOTO UNAVAILABLE";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #b2bbc5;
+  font: 700 11px var(--font-body);
+  letter-spacing: .12em;
+}
+@media (max-width: 900px) {
+  .achievements .record-stat { padding: 20px 17px; }
+  .record-stat-label { font-size: 10px; }
+  .record-stat p { font-size: 13px; }
+  .record-feature-grid { grid-template-columns: 1fr 1fr; }
+  .personal-best-row { padding: 21px 18px; }
+  .personal-best-header { padding: 21px 18px 16px; }
+  .personal-best-row strong { font-size: clamp(28px, 3.7vw, 38px); }
+}
+@media (max-width: 650px) {
+  .record-highlights { gap: 12px; margin-bottom: 34px; }
+  .achievements .record-stats { grid-template-columns: 1fr; }
+  .achievements .record-stat { padding: 17px 18px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 14px; align-items: center; }
+  .achievements .record-stat + .record-stat { border-left: 0; border-top: 1px solid rgba(255,255,255,.13); }
+  .record-stat-label { min-height: 0; grid-column: 1; }
+  .record-stat strong { margin: 0; grid-column: 2; grid-row: 1 / span 2; font-size: 37px; }
+  .record-stat p { margin: 0; grid-column: 1; font-size: 13px; }
+  .record-feature-grid { grid-template-columns: 1fr; gap: 12px; }
+  .champion-card { min-height: 230px; padding: 25px; gap: 15px; }
+  .champion-card h3 { font-size: clamp(42px, 12vw, 57px); }
+  .personal-best-header { padding: 20px 20px 16px; }
+  .personal-best-row { padding: 19px 20px; }
+  .personal-best-row strong { font-size: clamp(34px, 10vw, 43px); }
+  .archive-status { font-size: 14px; }
+}
