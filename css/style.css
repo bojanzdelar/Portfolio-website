@@ -742,13 +742,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .champion-card .feature-eyebrow { font-size: 15px; }
 }
 
-/* Standalone canoe sprint logo mark for header and footer. */
+/* Handwritten Zdelar signature wordmark for header and footer. */
 .brand-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 120px;
+  height: 38px;
   gap: 0;
   flex: 0 0 auto;
   transition: opacity .2s, transform .2s;
@@ -764,10 +764,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
   object-fit: contain;
 }
 .footer-brand-link {
-  width: 39px;
-  height: 39px;
+  width: 104px;
+  height: 33px;
 }
 @media (max-width: 650px) {
-  .brand-link { width: 43px; height: 43px; }
-  .footer-brand-link { width: 36px; height: 36px; }
+  .brand-link { width: 100px; height: 31px; }
+  .footer-brand-link { width: 92px; height: 29px; }
 }
