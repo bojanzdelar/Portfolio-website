@@ -1037,3 +1037,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
     max-height: 48px;
   }
 }
+
+
+/* Use the standalone red Z in the footer, while keeping the full wordmark in the header. */
+.footer-brand-link {
+  width: 58px;
+  height: 28px;
+}
+@media (max-width: 650px) {
+  .footer-brand-link {
+    width: 52px;
+    height: 25px;
+  }
+}
