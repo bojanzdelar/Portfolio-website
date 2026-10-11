@@ -1230,18 +1230,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .page-control .arrow-icon { color: currentColor; }
 
 
-/* Use local SVG masks for crisp, reliable arrows on older browsers. */
+
+/* Use real SVG image assets so arrows render consistently on older devices. */
 .arrow-icon,
 .external-link-arrow {
   display: inline-block;
-  flex: 0 0 auto;
-  background-color: currentColor;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
+  object-fit: contain;
+  vertical-align: middle;
+  background: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+  filter: none;
 }
 .arrow-icon::before,
 .arrow-icon::after,
@@ -1249,20 +1248,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .external-link-arrow::after {
   content: none;
 }
-.arrow-up-right,
-.external-link-arrow {
-  -webkit-mask-image: url("../assets/arrows/arrow-up-right.svg");
-  mask-image: url("../assets/arrows/arrow-up-right.svg");
-}
-.arrow-down-right {
-  -webkit-mask-image: url("../assets/arrows/arrow-down-right.svg");
-  mask-image: url("../assets/arrows/arrow-down-right.svg");
-}
-.arrow-right {
-  -webkit-mask-image: url("../assets/arrows/arrow-right.svg");
-  mask-image: url("../assets/arrows/arrow-right.svg");
-}
-.arrow-left {
-  -webkit-mask-image: url("../assets/arrows/arrow-left.svg");
-  mask-image: url("../assets/arrows/arrow-left.svg");
+.page-control .arrow-icon {
+  filter: brightness(0) invert(1);
 }
