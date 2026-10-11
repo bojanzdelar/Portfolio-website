@@ -35,11 +35,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero { position: relative; isolation: isolate; min-height: min(790px, calc(100vh - 88px)); overflow: hidden; display: flex; align-items: center; }
 .hero-image { position: absolute; z-index: -3; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 38%; transform: scale(1.01); }
 .hero-background { position: absolute; z-index: -2; inset: 0; background-image: linear-gradient(90deg, rgba(8,13,20,.98) 0%, rgba(8,13,20,.88) 34%, rgba(8,13,20,.42) 66%, rgba(8,13,20,.13) 100%), linear-gradient(0deg, rgba(8,13,20,.75), transparent 45%); }
+.hero-grain { position: absolute; z-index: -2; inset: 0; pointer-events: none; opacity: .12; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E"); }
 .hero-inner { width: min(1280px, calc(100% - 72px)); margin: 0 auto; padding: 88px 0 76px; position: relative; }
 .eyebrow { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 10px; letter-spacing: .18em; font-weight: 700; color: #c5cbd3; }
 .eyebrow-line { display: block; width: 27px; height: 2px; background: var(--accent); }
 .hero h1 { max-width: 760px; margin: 29px 0 23px; font: 800 clamp(68px, 9.6vw, 136px)/.88 var(--font-display); letter-spacing: -.09em; }
 .hero h1 > span { color: var(--accent); }
+.hero h1 em { color: transparent; -webkit-text-stroke: 1.5px var(--white); font-style: normal; }
 .hero-copy { max-width: 440px; margin: 0; color: #c1c7cf; font-size: 15px; line-height: 1.85; }
 .hero-actions { display: flex; align-items: center; gap: 28px; margin-top: 34px; }
 .button { min-height: 49px; display: inline-flex; align-items: center; justify-content: center; gap: 25px; border: 0; padding: 0 19px; font-size: 12px; font-weight: 700; cursor: pointer; transition: transform .2s, background .2s, color .2s; }
@@ -49,7 +51,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .button-primary span { font-size: 17px; }
 .text-link { color: white; font-size: 12px; font-weight: 700; }
 .text-link span { color: var(--accent); padding-left: 10px; font-size: 17px; }
+.hero-bottomline { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid var(--line); margin-top: 83px; padding-top: 19px; color: #b8c0ca; font: 700 9px var(--font-body); letter-spacing: .15em; }
 .status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(230,57,70,.16); vertical-align: 1px; }
+.hero-index { color: #9aa2ad; }
+.hero-index b { color: var(--white); font-weight: 700; }
+.hero-side-label { position: absolute; right: 25px; top: 50%; writing-mode: vertical-rl; transform: translateY(-50%); font-size: 9px; letter-spacing: .23em; color: rgba(255,255,255,.54); }
 .section-pad { padding: 116px max(36px, calc((100vw - 1280px) / 2)); }
 .section-kicker { display: flex; gap: 10px; align-items: center; color: #737d89; font-size: 10px; font-weight: 700; letter-spacing: .15em; }
 .section-kicker span { color: var(--ink); font-variant-numeric: tabular-nums; }
@@ -95,6 +101,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .page-control:disabled { opacity: .3; cursor: not-allowed; }
 .page-indicator { font: 700 11px var(--font-body); color: var(--white); letter-spacing: .1em; }
 .page-indicator i { margin: 0 9px; color: #687381; font-style: normal; }
+.statement { background: var(--accent); color: var(--ink); position: relative; overflow: hidden; }
+.statement-inner { max-width: 1280px; margin: 0 auto; padding: 94px 36px 92px; position: relative; z-index: 1; }
+.statement .eyebrow { color: #354019; }
+.statement .eyebrow-line { background: var(--ink); }
+.statement blockquote { margin: 40px 0 29px; font: 800 clamp(44px, 7.2vw, 91px)/.98 var(--font-display); letter-spacing: -.075em; }
+.statement blockquote em { font-style: normal; color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+.statement-caption { font: 700 9px var(--font-body); letter-spacing: .18em; }
+.statement-number { position: absolute; right: -15px; bottom: -180px; font: 800 clamp(250px, 43vw, 560px)/1 var(--font-display); color: rgba(11,16,24,.055); letter-spacing: -.12em; }
 .partners { background: #e8eae6; }
 .partners-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin: 43px 0 53px; }
 .partners .section-heading span { color: #8492a2; }
@@ -129,6 +143,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .submit-button { min-width: 175px; }
 .form-note { color: #74808d; font-size: 10px; margin: 13px 0 0; }
 .site-footer { min-height: 105px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: #080c12; color: #8c96a2; padding: 22px max(36px, calc((100vw - 1280px) / 2)); }
+.footer-wordmark .wordmark-mark { width: 34px; height: 34px; font-size: 13px; }
+.footer-wordmark .wordmark-name { color: white; font-size: 10px; }
+.footer-wordmark .wordmark-name span { font-size: 8px; }
 .site-footer > p, .site-footer > span { margin: 0; font-size: 9px; font-weight: 700; letter-spacing: .13em; }
 .site-footer > p { color: #626c79; }
 @media (min-width: 1500px) { .hero-inner, .nav-shell { width: min(1360px, calc(100% - 100px)); } }
@@ -141,6 +158,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .achievement-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .achievement-image-wrap { height: 220px; }
   .contact-layout { gap: 6%; }
+  .statement-inner { padding: 80px 24px; }
   .site-footer { padding: 22px 24px; }
 }
 @media (max-width: 650px) {
@@ -163,6 +181,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero-copy { max-width: 360px; font-size: 13px; line-height: 1.8; }
   .hero-actions { flex-wrap: wrap; gap: 21px; margin-top: 28px; }
   .button { min-height: 46px; padding: 0 14px; gap: 16px; }
+  .hero-bottomline { margin-top: 55px; padding-top: 16px; font-size: 8px; }
+  .hero-side-label { right: 8px; font-size: 8px; }
   .section-pad { padding: 74px 18px; }
   .section-kicker { font-size: 9px; }
   .intro-layout, .contact-layout { grid-template-columns: 1fr; gap: 27px; margin-top: 33px; }
@@ -184,6 +204,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .achievement-info h3 { font-size: 16px; }
   .pagination-wrap { margin-top: 25px; }
   .page-control { padding: 0 10px; gap: 8px; min-height: 40px; }
+  .statement-inner { padding: 68px 18px 70px; }
+  .statement blockquote { margin: 32px 0 24px; font-size: clamp(44px, 12.3vw, 65px); }
+  .statement-number { right: -25px; bottom: -90px; font-size: 300px; }
   .partner-logos a { min-height: 108px; padding: 18px 10px; }
   .partner-logos img { max-height: 47px; width: 91%; }
   .contact-layout { margin-top: 33px; gap: 40px; }
@@ -200,6 +223,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 /* Red is the signature accent throughout the athlete identity. */
 :root { --accent: #e63946; }
+.statement { background: #e63946; }
+.statement .eyebrow-line { background: var(--ink); }
 @media (min-width: 901px) {
   .hero-background { background-position: center 42%; }
 }
@@ -407,11 +432,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .nav-links > a:not(.nav-contact), .nav-contact { font-size: 14px; }
 .eyebrow { font-size: 11px; }
 .hero-copy { font-size: 17px; }
+.hero-bottomline { font-size: 11px; }
+.hero-side-label { font-size: 10px; }
 .section-kicker { font-size: 12px; }
 .intro-copy p { font-size: 16px; line-height: 1.85; }
 .intro-copy .lead { font-size: 22px; }
 .underlined-link { font-size: 14px; }
 .section-description { font-size: 15px; }
+.statement-caption { font-size: 11px; }
 .contact-intro > p { font-size: 15px; }
 .social-links a { font-size: 13px; }
 .field label { font-size: 11px; }
@@ -419,6 +447,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .invalid-feedback { font-size: 13px; }
 .form-note { font-size: 12px; }
 .site-footer > span { font-size: 11px; }
+.footer-wordmark .wordmark-name { font-size: 11px; }
+.footer-wordmark .wordmark-name span { font-size: 9px; }
 .about-photo figcaption { font-size: 10px; }
 @media (max-width: 900px) {
   .achievements .stat { padding-right: 12px; }
@@ -532,6 +562,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
   line-height: 1.65;
   position: relative;
   z-index: 1;
+}
+.champion-mark {
+  position: absolute;
+  right: -14px;
+  bottom: -54px;
+  color: rgba(11,16,24,.08);
+  font: 800 190px/1 var(--font-display);
+  letter-spacing: -.13em;
 }
 .personal-bests-card {
   display: flex;
@@ -675,6 +713,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 /* Simpler personal wordmark: name first, one restrained red dot, no monogram or subtitle. */
+.wordmark-simple { gap: 0; }
+.wordmark-simple .wordmark-name {
+  display: block;
+  color: var(--white);
+  font: 800 15px/1.1 var(--font-display);
+  letter-spacing: .055em;
+  white-space: nowrap;
+}
+.wordmark-simple .wordmark-accent {
+  display: inline;
+  color: var(--accent);
+  font: inherit;
+  letter-spacing: inherit;
+}
+.footer-wordmark .wordmark-name { font-size: 13px; }
 
 /* Increase prominence of the championship level above the U23 Champion title. */
 .champion-card .feature-eyebrow {
@@ -684,6 +737,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-weight: 800;
 }
 @media (max-width: 650px) {
+  .wordmark-simple .wordmark-name { font-size: 13px; }
+  .footer-wordmark .wordmark-name { font-size: 12px; }
   .champion-card .feature-eyebrow { font-size: 15px; }
 }
 
@@ -976,62 +1031,5 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .partner-logos img {
     width: 100%;
     max-height: 48px;
-  }
-}
-
-
-/* Keep the design bold, but let the athlete's story do the work. */
-.hero h1 {
-  font-size: clamp(64px, 8.8vw, 124px);
-  line-height: .96;
-  letter-spacing: -.05em;
-}
-.section-heading {
-  line-height: 1.06;
-  letter-spacing: -.055em;
-}
-.section-kicker {
-  color: #69737e;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .015em;
-}
-.achievements .section-kicker {
-  color: #a2abb7;
-}
-.hero-copy {
-  max-width: 465px;
-  font-size: 16px;
-  line-height: 1.75;
-}
-.intro-copy p {
-  font-size: 15px;
-  line-height: 1.82;
-}
-.achievement-card {
-  transition: border-color .2s;
-}
-.achievement-card:hover {
-  transform: none;
-  border-color: rgba(230,57,70,.48);
-}
-.achievement-card:hover .achievement-image {
-  transform: scale(1.02);
-}
-@media (max-width: 650px) {
-  .hero h1 {
-    font-size: clamp(58px, 15vw, 82px);
-    line-height: .98;
-    letter-spacing: -.055em;
-  }
-  .hero-copy {
-    font-size: 14px;
-    line-height: 1.78;
-  }
-  .section-kicker {
-    font-size: 11px;
-  }
-  .intro-copy p {
-    font-size: 14px;
   }
 }
