@@ -278,7 +278,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .about-photo figcaption span:first-child { color: #c82632; }
 @media (max-width: 900px) {
   .intro-layout { grid-template-columns: minmax(0, 1fr) minmax(260px, .8fr); gap: 30px; }
-  .about-photo img { min-height: 460px; max-height: 620px; }
+  .about-photo img { min-height: 460px; }
 }
 @media (max-width: 650px) {
   .intro-layout { grid-template-columns: 1fr; gap: 33px; }
