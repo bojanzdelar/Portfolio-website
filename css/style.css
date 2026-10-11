@@ -771,3 +771,52 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .brand-link { width: 154px; height: 34px; }
   .footer-brand-link { width: 132px; height: 30px; }
 }
+
+
+/* Give the two current partners more presence, full color, and a left-aligned layout. */
+.partner-logos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1040px;
+  margin: 0;
+}
+.partner-logos a {
+  min-height: 190px;
+  padding: 30px 28px 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  filter: none;
+  opacity: 1;
+  transition: opacity .2s;
+}
+.partner-logos a + a {
+  padding-left: 34px;
+}
+.partner-logos a:hover {
+  opacity: .86;
+  filter: none;
+}
+.partner-logos img {
+  display: block;
+  width: 92%;
+  max-width: 280px;
+  max-height: 108px;
+  object-fit: contain;
+  filter: saturate(1.18) contrast(1.08);
+}
+@media (max-width: 900px) {
+  .partner-logos { max-width: 100%; }
+  .partner-logos a { min-height: 160px; }
+  .partner-logos img { max-height: 82px; }
+}
+@media (max-width: 650px) {
+  .partner-logos a {
+    min-height: 138px;
+    padding: 18px 10px 18px 0;
+  }
+  .partner-logos a + a { padding-left: 16px; }
+  .partner-logos img {
+    width: 96%;
+    max-height: 66px;
+  }
+}
