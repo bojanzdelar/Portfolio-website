@@ -921,3 +921,66 @@ button, a { -webkit-tap-highlight-color: transparent; }
     max-height: 48px;
   }
 }
+
+
+/* Four partner marks: federation and club first, followed by equipment partners. */
+.partner-logos {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1120px;
+}
+.partner-logos a {
+  min-width: 0;
+  min-height: 122px;
+  padding: 20px 18px;
+  justify-content: center;
+}
+.partner-logos a + a {
+  padding-left: 18px;
+  border-left: 1px solid rgba(11,16,24,.2);
+}
+.partner-logos img {
+  width: 100%;
+  max-width: 178px;
+  max-height: 62px;
+  filter: grayscale(1) brightness(.76) contrast(1.1);
+}
+.partner-logos a:hover img {
+  filter: grayscale(0) brightness(1) contrast(1);
+}
+@media (max-width: 900px) {
+  .partner-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 800px;
+  }
+  .partner-logos a {
+    min-height: 112px;
+    padding: 18px;
+  }
+  .partner-logos a + a {
+    padding-left: 18px;
+    border-left: 0;
+  }
+  .partner-logos a:nth-child(even) {
+    border-left: 1px solid rgba(11,16,24,.2);
+    padding-left: 22px;
+  }
+  .partner-logos a:nth-child(odd) {
+    padding-left: 0;
+  }
+  .partner-logos img {
+    max-width: 190px;
+    max-height: 58px;
+  }
+}
+@media (max-width: 650px) {
+  .partner-logos a {
+    min-height: 98px;
+    padding: 15px 10px;
+  }
+  .partner-logos a:nth-child(even) {
+    padding-left: 14px;
+  }
+  .partner-logos img {
+    max-height: 48px;
+  }
+}
